@@ -14,56 +14,68 @@
         <h1>Campagne de recherche</h1>
         <section class="reco grid-mission">
             <h2>Mission de reconnaissance</h2>
-            <input type="checkbox" id="offre" name="offre" value="㊈ Offre"
+            <input type="checkbox" id="offre" name="offre" value="<img src='images/scout.png' alt='éclaireur'>"
                 alt="Trouver une offre d'emploi (alternance ou CDD/CDI)">
-            <label for="offre">㊈ Envoyer un éclaireur trouver les offres d'alliance</label><br>
+            <label for="offre"><img src="images/scout.png" alt="éclaireur"> Envoyer un éclaireur trouver les offres
+                d'alliance</label><br>
             <label for="nombreOffres">Objectif journalier d'offres à trouver : </label>
             <input type="number" id="nombreOffres" name="nombreOffres" min="0" value="0"><br>
-            <input type="checkbox" id="entreprise" name="entreprise" value="㊋ Royaume"
+            <input type="checkbox" id="entreprise" name="entreprise"
+                value="<img src='images/knight.png' alt='chevalier'>"
                 alt="Trouver une entreprise à solliciter spontanément">
-            <label for="entreprise">㊋ Envoyer un éclaireur trouver des royaumes auxquels proposer une
+            <label for="entreprise"><img src='images/knight.png' alt='chevalier'> Envoyer un éclaireur trouver des
+                royaumes auxquels proposer une
                 alliance</label><br>
             <label for="nombreEntreprises">Objectif journalier de royaumes à découvrir : </label>
             <input type="number" id="nombreEntreprises" name="nombreEntreprises" min="0" value="0"><br>
-            <input type="checkbox" id="infos" name="infos" value="㊏ Informations"
+            <input type="checkbox" id="infos" name="infos" value="<img src='images/spy.png' alt='espion'>"
                 alt="Rassembler des informations sur l'entreprise en vue d'une prise de contact">
-            <label for="infos">㊏ Envoyer un espion recueillir des informations sur un royaume</label><br>
+            <label for="infos"><img src='images/spy.png' alt='espion'> Envoyer un espion recueillir des informations sur
+                un royaume</label><br>
         </section>
         <section class="comm grid-mission">
             <h2>Etablissement des communications</h2>
-            <input type="checkbox" id="messager" name="messager" value="♘ Messager" alt="Envoyer un mail de contact">
-            <label for="messager">♘ Envoyer un messager</label><br>
+            <input type="checkbox" id="messager" name="messager" value="<img src='images/messenger.png' alt='messager'>"
+                alt="Envoyer un mail de contact">
+            <label for="messager"><img src='images/messenger.png' alt='messager'> Envoyer un messager</label><br>
             <label for="nombreMessages">Objectif journalier de missives à envoyer : </label>
             <input type="number" id="nombreMessages" name="nombreMessages" min="0" value="0"><br>
-            <input type="checkbox" id="audience" name="audience" value="♕ Audience" alt="Relancer par téléphone">
-            <label for="audience">♕ Demander une audience</label><br>
+            <input type="checkbox" id="audience" name="audience" value="<img src='images/king.png' alt='roi'>"
+                alt="Relancer par téléphone">
+            <label for="audience"><img src='images/king.png' alt='roi'> Demander une audience</label><br>
             <label for="nombreAppels">Objectif journalier d'audiences auxquelles prendre part : </label>
             <input type="number" id="nombreAppels" name="nombreAppels" min="0" value="0"><br>
-            <input type="checkbox" id="negociation" name="negociation" value="۞ Negociation"
-                alt="Obtenir un entretien d'embauche">
-            <label for="negociation">۞ Negocier une alliance en personne</label><br>
+            <input type="checkbox" id="negociation" name="negociation"
+                value="<img src='images/negociate.png' alt='negocier'>" alt="Obtenir un entretien d'embauche">
+            <label for="negociation"><img src='images/negociate.png' alt='negocier'> Negocier une alliance en
+                personne</label><br>
             <br>
-            <label alt="Remplir le tableau de suivi des demandes">▤ Rapport sur les royaumes voisins rempli
+            <label alt="Remplir le tableau de suivi des demandes"><img src='images/scroll.png' alt='rapport'> Rapport
+                sur les royaumes voisins rempli
                 :</label>
             <input type="radio" id="non" name="rapport" value="non" checked>
             <label for="non">Non</label>
-            <input type="radio" id="oui" name="rapport" value="▤ Rapport rempli">
+            <input type="radio" id="oui" name="rapport" value="<img src='images/scroll.png' alt='rapport'>">
             <label for="oui">Oui</label><br>
         </section>
         <section class="prep grid-mission">
             <h2>Consolidation de l'avant-poste</h2>
-            <input type="checkbox" id="soldats" name="soldats" value="╬ Recrutement"
+            <input type="checkbox" id="soldats" name="soldats" value="<img src='images/trooper.png' alt='soldat'>"
                 alt="Ajouter des contacts sur LinkedIn et autres">
-            <label for="soldats">╬ Engager des troupes (relance d'une campagne de recrutement et entrevues avec les
+            <label for="soldats"><img src='images/trooper.png' alt='soldat'> Engager des troupes (relance d'une campagne
+                de recrutement et entrevues avec les
                 soldats)</label><br>
-            <input type="checkbox" id="rassemblements" name="rassemblements" value="҈ Rassemblement"
-                alt="Participer à des événements">
-            <label for="rassemblements">҈ Participer à des rassemblements</label><br>
-            <input type="checkbox" id="entrainement" name="entrainement" value="❂ Entraînement"
+            <input type="checkbox" id="rassemblements" name="rassemblements"
+                value="<img src='images/gathering.png' alt='rassemblement'>" alt="Participer à des événements">
+            <label for="rassemblements"><img src='images/gathering.png' alt='rassemblement'> Participer à des
+                rassemblements</label><br>
+            <input type="checkbox" id="entrainement" name="entrainement"
+                value="<img src='images/target.png' alt='entraînement'>"
                 alt="Suivre des cours et développer ses compétences">
-            <label for="entrainement">❂ Entraîner ses troupes</label><br>
-            <input type="checkbox" id="renfort" name="renfort" value="♖ Renfort" alt="Développer son porfolio">
-            <label for="renfort">♖ Renforcer ses défenses</label><br>
+            <label for="entrainement"><img src='images/target.png' alt='entraînement'> Entraîner ses troupes</label><br>
+            <input type="checkbox" id="renfort" name="renfort" value="<img src='images/castle.png' alt='fort'>"
+                alt="Développer son porfolio">
+            <label for="renfort"><img src='images/castle.png' alt='fort'> Renforcer ses défenses</label><br>
         </section>
 
         <div class="deploiement-reco grid-deploiement"></div>

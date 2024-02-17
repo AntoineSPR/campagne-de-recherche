@@ -27,9 +27,9 @@ let nombreAppels = document.getElementById("nombreAppels");
 function afficherObjectifReco(nombreVise) {
     nombreVise.addEventListener("change", () => {
         let nombreInfos = parseInt(nombreOffres.value) + parseInt(nombreEntreprises.value);
-        objectifReco.innerHTML = `<p> / ${nombreOffres.value} ㊈<br>
-            / ${nombreEntreprises.value} ㊋<br>
-            / ${nombreInfos} ㊏</p>`
+        objectifReco.innerHTML = `<p> / ${nombreOffres.value} <img src='images/scout.png' alt='éclaireur'><br>
+            / ${nombreEntreprises.value} <img src='images/knight.png' alt='chevalier'><br>
+            / ${nombreInfos} <img src='images/spy.png' alt='espion'></p>`
     })
 }
 
@@ -40,8 +40,8 @@ afficherObjectifReco(nombreEntreprises);
 
 function afficherObjectifComm(nombreVise) {
     nombreVise.addEventListener("change", () => {
-        objectifComm.innerHTML = `<p> / ${nombreMessages.value} ♘<br>
-        / ${nombreAppels.value} ♕</p>`
+        objectifComm.innerHTML = `<p> / ${nombreMessages.value} <img src='images/messenger.png' alt='messager'><br>
+        / ${nombreAppels.value} <img src='images/king.png' alt='roi'></p>`
     })
 }
 
@@ -53,7 +53,7 @@ afficherObjectifComm(nombreAppels);
 function deployerTroupes(troupe, zone) {
     troupe.addEventListener("change", () => {
         if (troupe.checked == true) {
-            zone.innerHTML += "<br>" + troupe.value;
+            zone.innerHTML += `<div>${troupe.value}</div>`;
             troupe.checked = false;
         }
     })
@@ -74,7 +74,7 @@ deployerTroupes(renfort, deploiementPrep);
 
 rapport.addEventListener("change", () => {
     if (rapport.checked == true) {
-        affichageRapport.innerHTML += "<br>" + rapport.value;
+        affichageRapport.innerHTML += rapport.value;
     }
 })
 
@@ -82,9 +82,9 @@ rapport.addEventListener("change", () => {
 
 function supprimerElement(zone) {
     zone.addEventListener("click", () => {
-        let listeDeploiement = zone.innerHTML.split("<br>");
+        let listeDeploiement = zone.innerHTML.split("<div>");
         listeDeploiement.pop();
-        zone.innerHTML = listeDeploiement.join("<br>");
+        zone.innerHTML = listeDeploiement.join("<div>");
     })
 }
 
