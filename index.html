@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <link href="style.css" rel="stylesheet">
+    <script src="campagne-script.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campagne de recherche</title>
+</head>
+
+<body>
+    <main>
+        <h1>Campagne de recherche</h1>
+        <section>
+        <section class="reco">
+            <h2>Mission de reconnaissance</h2>
+            <input type="checkbox" id="offre" name="offre" value="㊈ Offre"
+                alt="Trouver une offre d'emploi (alternance ou CDD/CDI)">
+            <label for="offre">㊈ Envoyer un éclaireur trouver les offres d'alliance</label><br>
+            <label for="nombreOffres">Objectif journalier d'offres à trouver : </label>
+            <input type="number" id="nombreOffres" name="nombreOffres" min="0" value="0"><br>
+            <input type="checkbox" id="entreprise" name="entreprise" value="㊋ Royaume"
+                alt="Trouver une entreprise à solliciter spontanément">
+            <label for="entreprise">㊋ Envoyer un éclaireur trouver des royaumes auxquels proposer une
+                alliance</label><br>
+            <label for="nombreEntreprises">Objectif journalier de royaumes à découvrir : </label>
+            <input type="number" id="nombreEntreprises" name="nombreEntreprises" min="0" value="0"><br>
+            <input type="checkbox" id="infos" name="infos" value="㊏ Informations"
+                alt="Rassembler des informations sur l'entreprise en vue d'une prise de contact">
+            <label for="infos">㊏ Envoyer un espion recueillir des informations sur un royaume</label><br>
+        </section>
+        <section class="comm">
+            <h2>Etablissement des communications</h2>
+            <input type="checkbox" id="messager" name="messager" value="♘ Messager" alt="Envoyer un mail de contact">
+            <label for="messager">♘ Envoyer un messager</label><br>
+            <label for="nombreMessages">Objectif journalier de missives à envoyer : </label>
+            <input type="number" id="nombreMessages" name="nombreMessages" min="0" value="0"><br>
+            <input type="checkbox" id="audience" name="audience" value="♕ Audience" alt="Relancer par téléphone">
+            <label for="audience">♕ Demander une audience</label><br>
+            <label for="nombreAppels">Objectif journalier d'audiences auxquelles prendre part : </label>
+            <input type="number" id="nombreAppels" name="nombreAppels" min="0" value="0"><br>
+            <input type="checkbox" id="negociation" name="negociation" value="۞ Negociation"
+                alt="Obtenir un entretien d'embauche">
+            <label for="negociation">۞ Negocier une alliance en personne</label><br>
+            <br>
+            <label alt="Remplir le tableau de suivi des demandes">▤ Rapport sur les royaumes voisins rempli
+                :</label>
+            <input type="radio" id="non" name="rapport" value="non" checked>
+            <label for="non">Non</label>
+            <input type="radio" id="oui" name="rapport" value="▤ Rapport rempli">
+            <label for="oui">Oui</label><br>
+        </section>
+        <section class="prep">
+            <h2>Consolidation de l'avant-poste</h2>
+            <input type="checkbox" id="soldats" name="soldats" value="╬ Recrutement"
+                alt="Ajouter des contacts sur LinkedIn et autres">
+            <label for="soldats">╬ Engager des troupes (relance d'une campagne de recrutement et entrevues avec les
+                soldats)</label><br>
+            <input type="checkbox" id="rassemblements" name="rassemblements" value="҈ Rassemblement"
+                alt="Participer à des événements">
+            <label for="rassemblements">҈ Participer à des rassemblements</label><br>
+            <input type="checkbox" id="entrainement" name="entrainement" value="❂ Entraînement"
+                alt="Suivre des cours et développer ses compétences">
+            <label for="entrainement">❂ Entraîner ses troupes</label><br>
+            <input type="checkbox" id="renfort" name="renfort" value="♖ Renfort" alt="Développer son porfolio">
+            <label for="renfort">♖ Renforcer ses défenses</label><br>
+        </section>
+        </section>
+
+        <section class="resultat">
+            <div class="deploiement"></div>
+            <div class="objectif-reco"></div>
+            <div class="objectif-comm"></div>
+        </section>
+    </main>
+</body>
+
+</html>
