@@ -12,8 +12,7 @@
 <body>
     <main>
         <h1>Campagne de recherche</h1>
-        <section>
-        <section class="reco">
+        <section class="reco grid-mission">
             <h2>Mission de reconnaissance</h2>
             <input type="checkbox" id="offre" name="offre" value="㊈ Offre"
                 alt="Trouver une offre d'emploi (alternance ou CDD/CDI)">
@@ -30,7 +29,7 @@
                 alt="Rassembler des informations sur l'entreprise en vue d'une prise de contact">
             <label for="infos">㊏ Envoyer un espion recueillir des informations sur un royaume</label><br>
         </section>
-        <section class="comm">
+        <section class="comm grid-mission">
             <h2>Etablissement des communications</h2>
             <input type="checkbox" id="messager" name="messager" value="♘ Messager" alt="Envoyer un mail de contact">
             <label for="messager">♘ Envoyer un messager</label><br>
@@ -51,7 +50,7 @@
             <input type="radio" id="oui" name="rapport" value="▤ Rapport rempli">
             <label for="oui">Oui</label><br>
         </section>
-        <section class="prep">
+        <section class="prep grid-mission">
             <h2>Consolidation de l'avant-poste</h2>
             <input type="checkbox" id="soldats" name="soldats" value="╬ Recrutement"
                 alt="Ajouter des contacts sur LinkedIn et autres">
@@ -66,13 +65,13 @@
             <input type="checkbox" id="renfort" name="renfort" value="♖ Renfort" alt="Développer son porfolio">
             <label for="renfort">♖ Renforcer ses défenses</label><br>
         </section>
-        </section>
 
-        <section class="resultat">
-            <div class="deploiement"></div>
-            <div class="objectif-reco"></div>
-            <div class="objectif-comm"></div>
-        </section>
+        <div class="deploiement-reco grid-deploiement"></div>
+        <div class="deploiement-comm grid-deploiement"></div>
+        <div class="deploiement-prep grid-deploiement"></div>
+        <div class="objectif-reco grid-objectif"></div>
+        <div class="objectif-comm grid-objectif"></div>
+        <div class="affichage-rapport grid-objectif"></div>
     </main>
 </body>
 

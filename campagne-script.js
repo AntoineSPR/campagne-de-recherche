@@ -1,6 +1,9 @@
-let deploiement = document.querySelector(".deploiement");
+let deploiementReco = document.querySelector(".deploiement-reco");
+let deploiementComm = document.querySelector(".deploiement-comm");
+let deploiementPrep = document.querySelector(".deploiement-prep");
 let objectifReco = document.querySelector(".objectif-reco");
 let objectifComm = document.querySelector(".objectif-comm");
+let affichageRapport = document.querySelector(".affichage-rapport");
 
 let offre = document.getElementById("offre");
 let entreprise = document.getElementById("entreprise");
@@ -19,26 +22,26 @@ let nombreEntreprises = document.getElementById("nombreEntreprises");
 let nombreMessages = document.getElementById("nombreMessages");
 let nombreAppels = document.getElementById("nombreAppels");
 
-// Fonction pour afficher l'objectif de reconnaissance choisi pour une catégorie donnée, et calculer l'objectif total :
+// Fonction pour afficher les objectifs de reconnaissance :
 
 function afficherObjectifReco(nombreVise) {
     nombreVise.addEventListener("change", () => {
         let nombreInfos = parseInt(nombreOffres.value) + parseInt(nombreEntreprises.value);
-        objectifReco.innerHTML = `<p>Objectif d'offres à trouver : ${nombreOffres.value} <br>
-            Objectif de royaumes à découvrir : ${nombreEntreprises.value}<br>
-            Objectif de de renseignements à glaner : ${nombreInfos}</p>`
+        objectifReco.innerHTML = `<p> / ${nombreOffres.value} ㊈<br>
+            / ${nombreEntreprises.value} ㊋<br>
+            / ${nombreInfos} ㊏</p>`
     })
 }
 
 afficherObjectifReco(nombreOffres);
 afficherObjectifReco(nombreEntreprises);
 
-// Fonction pour afficher l'objectif de communication choisi pour une catégorie donnée :
+// Fonction pour afficher les objectifs de communication :
 
 function afficherObjectifComm(nombreVise) {
     nombreVise.addEventListener("change", () => {
-        objectifComm.innerHTML = `<p>Objectif de messagers à envoyer : ${nombreMessages.value}<br>
-            Objectif d'audience auxquelles prendre part : ${nombreAppels.value}</p>`
+        objectifComm.innerHTML = `<p> / ${nombreMessages.value} ♘<br>
+        / ${nombreAppels.value} ♕</p>`
     })
 }
 
@@ -47,38 +50,45 @@ afficherObjectifComm(nombreAppels);
 
 // Fonction pour deployer les éléments cochés :
 
-function deployerTroupes(troupe) {
+function deployerTroupes(troupe, zone) {
     troupe.addEventListener("change", () => {
         if (troupe.checked == true) {
-            deploiement.innerHTML += "<br>" + troupe.value;
+            zone.innerHTML += "<br>" + troupe.value;
             troupe.checked = false;
         }
     })
 }
 
-deployerTroupes(offre);
-deployerTroupes(entreprise);
-deployerTroupes(infos);
-deployerTroupes(messager);
-deployerTroupes(audience);
-deployerTroupes(negociation);
-deployerTroupes(soldats);
-deployerTroupes(rassemblements);
-deployerTroupes(entrainement);
-deployerTroupes(renfort);
+deployerTroupes(offre, deploiementReco);
+deployerTroupes(entreprise, deploiementReco);
+deployerTroupes(infos, deploiementReco);
+deployerTroupes(messager, deploiementComm);
+deployerTroupes(audience, deploiementComm);
+deployerTroupes(negociation, deploiementComm);
+deployerTroupes(soldats, deploiementPrep);
+deployerTroupes(rassemblements, deploiementPrep);
+deployerTroupes(entrainement, deploiementPrep);
+deployerTroupes(renfort, deploiementPrep);
 
 // Déployer le rapport si coché 'Oui' : 
 
 rapport.addEventListener("change", () => {
     if (rapport.checked == true) {
-        deploiement.innerHTML += "<br>" + rapport.value;
+        affichageRapport.innerHTML += "<br>" + rapport.value;
     }
 })
 
-// Supprimer le dernier élément de la liste de deploiement en cliquant n'importe où sur la liste :
+// Fonction pour supprimer le dernier élément de la liste de deploiement en cliquant n'importe où sur la liste :
 
-deploiement.addEventListener("click", () => {
-    let listeDeploiement = deploiement.innerHTML.split("<br>");
-    listeDeploiement.pop();
-    deploiement.innerHTML = listeDeploiement.join("<br>");
-})
+function supprimerElement(zone) {
+    zone.addEventListener("click", () => {
+        let listeDeploiement = zone.innerHTML.split("<br>");
+        listeDeploiement.pop();
+        zone.innerHTML = listeDeploiement.join("<br>");
+    })
+}
+
+supprimerElement(deploiementReco);
+supprimerElement(deploiementComm);
+supprimerElement(deploiementPrep);
+
