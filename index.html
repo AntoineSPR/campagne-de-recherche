@@ -65,10 +65,10 @@
             <label for="soldats"><img src='images/trooper.png' alt='soldat'> Engager des troupes (relance d'une campagne
                 de recrutement et entrevues avec les
                 soldats)</label><br>
-            <input type="checkbox" id="rassemblements" name="rassemblements"
+            <!-- <input type="checkbox" id="rassemblements" name="rassemblements"
                 value="<img src='images/gathering.png' alt='rassemblement'>" alt="Participer à des événements">
             <label for="rassemblements"><img src='images/gathering.png' alt='rassemblement'> Participer à des
-                rassemblements</label><br>
+                rassemblements</label><br> -->
             <input type="checkbox" id="entrainement" name="entrainement"
                 value="<img src='images/target.png' alt='entraînement'>"
                 alt="Suivre des cours et développer ses compétences">
@@ -78,9 +78,22 @@
             <label for="renfort"><img src='images/castle.png' alt='fort'> Renforcer ses défenses</label><br>
         </section>
 
-        <div class="deploiement-reco grid-deploiement"></div>
-        <div class="deploiement-comm grid-deploiement"></div>
-        <div class="deploiement-prep grid-deploiement"></div>
+        <div class="deploiement-reco grid-deploiement">
+            <div class="offre deploiement-interne"></div>
+            <div class="entreprise deploiement-interne"></div>
+            <div class="infos deploiement-interne"></div>
+        </div>
+        <div class="deploiement-comm grid-deploiement">
+            <div class="messager deploiement-interne"></div>
+            <div class=" audience deploiement-interne"></div>
+            <div class="negociation deploiement-interne"></div>
+        </div>
+        <div class="deploiement-prep grid-deploiement">
+            <div class="soldats deploiement-interne"></div>
+            <div class="rassemblements deploiement-interne"></div>
+            <div class="entrainement deploiement-interne"></div>
+            <div class="renfort"></div>
+        </div>
         <div class="objectif-reco grid-objectif"></div>
         <div class="objectif-comm grid-objectif"></div>
         <div class="affichage-rapport grid-objectif"></div>

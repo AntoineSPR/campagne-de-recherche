@@ -1,6 +1,7 @@
 let deploiementReco = document.querySelector(".deploiement-reco");
 let deploiementComm = document.querySelector(".deploiement-comm");
 let deploiementPrep = document.querySelector(".deploiement-prep");
+let deploiementInterne = document.querySelectorAll(".deploiement-interne");
 let objectifReco = document.querySelector(".objectif-reco");
 let objectifComm = document.querySelector(".objectif-comm");
 let affichageRapport = document.querySelector(".affichage-rapport");
@@ -13,7 +14,7 @@ let messager = document.getElementById("messager");
 let audience = document.getElementById("audience");
 let negociation = document.getElementById("negociation");
 let soldats = document.getElementById("soldats");
-let rassemblements = document.getElementById("rassemblements");
+//let rassemblements = document.getElementById("rassemblements");
 let entrainement = document.getElementById("entrainement");
 let renfort = document.getElementById("renfort");
 
@@ -51,9 +52,10 @@ afficherObjectifComm(nombreAppels);
 // Fonction pour deployer les éléments cochés :
 
 function deployerTroupes(troupe, zone) {
-    troupe.addEventListener("change", () => {
+    troupe.addEventListener("click", () => {
         if (troupe.checked == true) {
-            zone.innerHTML += `<div>${troupe.value}</div>`;
+            let zoneInterne=zone.querySelector(`.${troupe.id}`);
+            zoneInterne.innerHTML += `<div>${troupe.value}</div>`;
             troupe.checked = false;
         }
     })
@@ -66,7 +68,7 @@ deployerTroupes(messager, deploiementComm);
 deployerTroupes(audience, deploiementComm);
 deployerTroupes(negociation, deploiementComm);
 deployerTroupes(soldats, deploiementPrep);
-deployerTroupes(rassemblements, deploiementPrep);
+// deployerTroupes(rassemblements, deploiementPrep);
 deployerTroupes(entrainement, deploiementPrep);
 deployerTroupes(renfort, deploiementPrep);
 
@@ -78,7 +80,7 @@ rapport.addEventListener("change", () => {
     }
 })
 
-// Fonction pour supprimer le dernier élément de la liste de deploiement en cliquant n'importe où sur la liste :
+// Fonction pour supprimer le dernier élément de la liste de deploiement en cliquant dans sa zone :
 
 function supprimerElement(zone) {
     zone.addEventListener("click", () => {
@@ -88,7 +90,24 @@ function supprimerElement(zone) {
     })
 }
 
+deploiementInterne.forEach(zone => {
+    supprimerElement(zone);
+});
+
+/*
 supprimerElement(deploiementReco);
 supprimerElement(deploiementComm);
 supprimerElement(deploiementPrep);
+*/
+
+// Calcul de la hauteur maximale des zones de déploiement en fonction du viewport et limitation pour conserver les proportions de la grille :
+
+const hauteurDeploiement = deploiementReco.getBoundingClientRect().height;
+const deploiementInterneElements = document.querySelectorAll('.deploiement-interne');
+
+deploiementInterneElements.forEach(element => {
+    element.style.maxHeight = `${hauteurDeploiement}px`;
+});
+
+
 

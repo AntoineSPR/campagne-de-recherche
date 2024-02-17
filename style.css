@@ -15,18 +15,19 @@ main {
     gap: 1vh 1vw;
     margin: 1vh 1vw;
     width: 97vw;
-    max-height: 100vh;
+    height: 97vh;
 }
 
 .grid-deploiement {
     border: solid black 2px;
-    /* display: flex;
-    justify-content: center;
-    align-content: center;
-    flex-direction: column;
-    flex-wrap: wrap; */
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100px, 100%), 1fr));
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.deploiement-interne {
+    display: grid;
+    grid-template-columns : repeat(auto-fit, minmax(min(50px,100%), 1fr));
+    overflow-y: hidden;
 }
 
 .grid-objectif {
