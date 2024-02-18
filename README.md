@@ -1,14 +1,18 @@
 # campagne-de-recherche
 (En cours) Projet de programme en JS : suivi d'une campagne de recherche sous forme de jeu.
 
-Ce jeu propose au joueur de lancer une campagne afin de forger une alliance avec un royaume.
-Il lui permet de suivre son avancement en comparant la recherche d'un emploi à une campagne militaire d'un autre temps.
+Ce programme permet au joueur de suivre son avancement en comparant la recherche d'un emploi à une campagne militaire d'un autre temps.
 
-> La phase de reconnaissance : il lui faut envoyer des éclaireurs trouver des propositions d'alliances (offres d'emplois) et des alliés potentiels (entreprises à solliciter spontanément), ainsi que des espions pour rassembler des informations sur les royaumes en question (se renseigner sur les entreprises à démarcher).
+///////////
+Vous incarnez un chef de guerre à la tête d'une troupe de mercenaires, en quête d'un royaume à qui louer vos services. Pour y parvenir, vous allez déployer vos unités sur le terrain : chaque type d'unité correspond à une mission particulière. 
 
-> La phase de communication : il lui faut envoyer des messagers pour établir un contact (mails) et obtenir des audiences (appels téléphoniques), pour enfin négocier une alliance en personne (entretien).
+Vous pouvez définir vos objectifs journaliers pour certaines missions, et vérifier que tous les objectifs ont été atteints à la fin de la journée de campagne. Trois phases vous sont proposées, correspondant à trois catégories de missions à accomplir :
 
-> La phase de préparation, en parallèle : il doit recruter des troupes (élargir son réseau professionnel), entraîner ses troupes (développer ses compétences en se formant) et renforcer son campement (étoffer son portfolio).
+> La phase de reconnaissance : envoyez des aventuriers trouver des quêtes (offres d'emploi), des éclaireurs identifier les royaumes environnants (entreprises à solliciter spontanément), ainsi que de espions pour recueillir des informations sur l'ensemble des royaumes trouvés par les aventuriers et les éclaireurs (se renseigner sur les entreprises avant de répondre à une offre ou candidater spontanément).
 
-A chaque action de sa part, il déploie une unité sur le terrain.
-Il peut définir un objectif d'unités de chaque type à déployer chaque jour, et doit mettre à jour son rapport (tableau de suivi du démarchage et des événements) à l'issue de ses actions de reconnaissance et communication.
+> La phase de communication : envoyez des messagers pour établir un contact (mail), des émissaires pour demander une audience (appel), et rendez-vous sur place pour négocier un contrat en personne (entretien).
+
+> La phase de préparation : en parallèle, déployez des ambassadeurs pour trouver des alliés (élargir et cultiver son réseau professionnel), des maîtres d'armes pour entraîner vos troupes (développer ses compétences en se formant), et des bâtisseurs pour renforcer son campement (étoffer son portfolio).
+
+License pour les icônes : 
+<a href="https://www.flaticon.com/free-icons/medieval" title="medieval icons">Medieval icons created by Leremy - Flaticon</a>
