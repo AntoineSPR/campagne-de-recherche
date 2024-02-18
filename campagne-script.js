@@ -9,12 +9,10 @@ let affichageRapport = document.querySelector(".affichage-rapport");
 let offre = document.getElementById("offre");
 let entreprise = document.getElementById("entreprise");
 let infos = document.getElementById("infos");
-let rapport = document.getElementById("oui");
 let messager = document.getElementById("messager");
 let audience = document.getElementById("audience");
 let negociation = document.getElementById("negociation");
 let soldats = document.getElementById("soldats");
-//let rassemblements = document.getElementById("rassemblements");
 let entrainement = document.getElementById("entrainement");
 let renfort = document.getElementById("renfort");
 
@@ -23,40 +21,79 @@ let nombreEntreprises = document.getElementById("nombreEntreprises");
 let nombreMessages = document.getElementById("nombreMessages");
 let nombreAppels = document.getElementById("nombreAppels");
 
-// Fonction pour afficher les objectifs de reconnaissance :
+let scoreOffres = document.querySelector(".score-offres");
+let scoreEntreprises = document.querySelector(".score-entreprises");
+let scoreInfos = document.querySelector(".score-infos");
+let scoreMessages = document.querySelector(".score-messages");
+let scoreAppels = document.querySelector(".score-appels");
 
-function afficherObjectifReco(nombreVise) {
+let score = document.querySelectorAll(".score");
+let obj = document.querySelectorAll(".obj");
+
+// Fonction pour afficher les objectifs :
+
+function afficherObjectif(nombreVise) {
     nombreVise.addEventListener("change", () => {
         let nombreInfos = parseInt(nombreOffres.value) + parseInt(nombreEntreprises.value);
-        objectifReco.innerHTML = `<p> / ${nombreOffres.value} <img src='images/scout.png' alt='éclaireur'><br>
-            / ${nombreEntreprises.value} <img src='images/knight.png' alt='chevalier'><br>
-            / ${nombreInfos} <img src='images/spy.png' alt='espion'></p>`
+        let objOffres = document.querySelector(".obj-offres");
+        objOffres.innerText = `${nombreOffres.value}`;
+        let objEntreprises = document.querySelector(".obj-entreprises");
+        objEntreprises.innerText = `${nombreEntreprises.value}`;
+        let objInfos = document.querySelector(".obj-infos");
+        objInfos.innerText = `${nombreInfos}`;
+        let objMessages = document.querySelector(".obj-messages");
+        objMessages.innerText = `${nombreMessages.value}`;
+        let objAppels = document.querySelector(".obj-appels");
+        objAppels.innerText = `${nombreAppels.value}`;
     })
 }
 
-afficherObjectifReco(nombreOffres);
-afficherObjectifReco(nombreEntreprises);
+afficherObjectif(nombreOffres);
+afficherObjectif(nombreEntreprises);
+afficherObjectif(nombreMessages);
+afficherObjectif(nombreAppels);
 
-// Fonction pour afficher les objectifs de communication :
-
-function afficherObjectifComm(nombreVise) {
-    nombreVise.addEventListener("change", () => {
-        objectifComm.innerHTML = `<p> / ${nombreMessages.value} <img src='images/messenger.png' alt='messager'><br>
-        / ${nombreAppels.value} <img src='images/king.png' alt='roi'></p>`
-    })
-}
-
-afficherObjectifComm(nombreMessages);
-afficherObjectifComm(nombreAppels);
-
-// Fonction pour deployer les éléments cochés :
+// Fonction pour deployer les éléments cochés, puis :
+// Augmenter le score correspondant, puis :
+// Changer la couleur du score lorsque l'objectif est atteint, puis :
+// Afficher l'icône de rapport lorsque tous les scores sont au vert :
 
 function deployerTroupes(troupe, zone) {
     troupe.addEventListener("click", () => {
-        if (troupe.checked == true) {
-            let zoneInterne=zone.querySelector(`.${troupe.id}`);
-            zoneInterne.innerHTML += `<div>${troupe.value}</div>`;
-            troupe.checked = false;
+        let zoneInterne = zone.querySelector(`.${troupe.id}`);
+        zoneInterne.innerHTML += `<div>${troupe.innerHTML}</div>`;
+        switch(troupe) {
+            case offre :
+                scoreOffres.innerText = parseInt(scoreOffres.innerText) + 1;
+                break;
+            case entreprise : 
+                scoreEntreprises.innerText = parseInt(scoreEntreprises.innerText) + 1;
+                break;
+            case infos :
+                scoreInfos.innerText = parseInt(scoreInfos.innerText) + 1;
+                break;
+            case messager :
+                scoreMessages.innerText = parseInt(scoreMessages.innerText) + 1;
+                break;
+            case audience :
+                scoreAppels.innerText = parseInt(scoreAppels.innerText) + 1;
+                break;
+        }
+        for (let i = 0; i < score.length; i++) {
+            let valeurScore = parseInt(score[i].innerText);
+            let valeurObj = parseInt(obj[i].innerText);
+            
+            if (valeurScore === valeurObj) {
+                score[i].style.color = "green";
+                obj[i].style.color = "green";
+            } 
+        }
+        let toutVert = Array.from(score).every(element => {
+            return element.style.color === "green";
+        });
+        
+        if (toutVert) {
+            affichageRapport.innerHTML = `<img src='images/scroll.png' alt='rapport'>`;
         }
     })
 }
@@ -68,17 +105,8 @@ deployerTroupes(messager, deploiementComm);
 deployerTroupes(audience, deploiementComm);
 deployerTroupes(negociation, deploiementComm);
 deployerTroupes(soldats, deploiementPrep);
-// deployerTroupes(rassemblements, deploiementPrep);
 deployerTroupes(entrainement, deploiementPrep);
 deployerTroupes(renfort, deploiementPrep);
-
-// Déployer le rapport si coché 'Oui' : 
-
-rapport.addEventListener("change", () => {
-    if (rapport.checked == true) {
-        affichageRapport.innerHTML += rapport.value;
-    }
-})
 
 // Fonction pour supprimer le dernier élément de la liste de deploiement en cliquant dans sa zone :
 
@@ -94,11 +122,6 @@ deploiementInterne.forEach(zone => {
     supprimerElement(zone);
 });
 
-/*
-supprimerElement(deploiementReco);
-supprimerElement(deploiementComm);
-supprimerElement(deploiementPrep);
-*/
 
 // Calcul de la hauteur maximale des zones de déploiement en fonction du viewport et limitation pour conserver les proportions de la grille :
 
@@ -108,6 +131,3 @@ const deploiementInterneElements = document.querySelectorAll('.deploiement-inter
 deploiementInterneElements.forEach(element => {
     element.style.maxHeight = `${hauteurDeploiement}px`;
 });
-
-
-

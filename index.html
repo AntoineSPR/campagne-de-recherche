@@ -12,70 +12,72 @@
 <body>
     <main>
         <h1>Campagne de recherche</h1>
+
         <section class="reco grid-mission">
             <h2>Mission de reconnaissance</h2>
-            <input type="checkbox" id="offre" name="offre" value="<img src='images/scout.png' alt='éclaireur'>"
-                alt="Trouver une offre d'emploi (alternance ou CDD/CDI)">
-            <label for="offre"><img src="images/scout.png" alt="éclaireur"> Envoyer un éclaireur trouver les offres
-                d'alliance</label><br>
-            <label for="nombreOffres">Objectif journalier d'offres à trouver : </label>
-            <input type="number" id="nombreOffres" name="nombreOffres" min="0" value="0"><br>
-            <input type="checkbox" id="entreprise" name="entreprise"
-                value="<img src='images/knight.png' alt='chevalier'>"
-                alt="Trouver une entreprise à solliciter spontanément">
-            <label for="entreprise"><img src='images/knight.png' alt='chevalier'> Envoyer un éclaireur trouver des
-                royaumes auxquels proposer une
-                alliance</label><br>
-            <label for="nombreEntreprises">Objectif journalier de royaumes à découvrir : </label>
-            <input type="number" id="nombreEntreprises" name="nombreEntreprises" min="0" value="0"><br>
-            <input type="checkbox" id="infos" name="infos" value="<img src='images/spy.png' alt='espion'>"
-                alt="Rassembler des informations sur l'entreprise en vue d'une prise de contact">
-            <label for="infos"><img src='images/spy.png' alt='espion'> Envoyer un espion recueillir des informations sur
-                un royaume</label><br>
+            <div class="mission-element">
+            <button type="button" id="offre" name="offre" alt="Trouver une offre d'emploi (alternance ou CDD/CDI)">
+                <img src='images/aventurier.png' alt='aventurier'>
+            </button><br>
+            <label for="offre">Aventurier<br><em>Trouver des quêtes</em></label>
+            </div>
+            <div class="mission-element">
+            <button type="button" id="entreprise" name="entreprise" alt="Trouver une entreprise à solliciter spontanément">
+                <img src='images/eclaireur.png' alt='eclaireur'>
+            </button><br>
+            <label for="entreprise">Eclaireur<br><em>Trouver des royaumes auxquels proposer ses services</em></label>
+            </div>
+            <div class="mission-element">
+            <button type="button" id="infos" name="infos" alt="Rassembler des informations sur l'entreprise en vue d'une prise de contact">
+                <img src='images/espion.png' alt='espion'>
+            </button><br>
+            <label for="infos">Espion<br><em>Recueillir des informations sur un royaume</em></label>
+            </div>
         </section>
+
         <section class="comm grid-mission">
             <h2>Etablissement des communications</h2>
-            <input type="checkbox" id="messager" name="messager" value="<img src='images/messenger.png' alt='messager'>"
-                alt="Envoyer un mail de contact">
-            <label for="messager"><img src='images/messenger.png' alt='messager'> Envoyer un messager</label><br>
-            <label for="nombreMessages">Objectif journalier de missives à envoyer : </label>
-            <input type="number" id="nombreMessages" name="nombreMessages" min="0" value="0"><br>
-            <input type="checkbox" id="audience" name="audience" value="<img src='images/king.png' alt='roi'>"
-                alt="Relancer par téléphone">
-            <label for="audience"><img src='images/king.png' alt='roi'> Demander une audience</label><br>
-            <label for="nombreAppels">Objectif journalier d'audiences auxquelles prendre part : </label>
-            <input type="number" id="nombreAppels" name="nombreAppels" min="0" value="0"><br>
-            <input type="checkbox" id="negociation" name="negociation"
-                value="<img src='images/negociate.png' alt='negocier'>" alt="Obtenir un entretien d'embauche">
-            <label for="negociation"><img src='images/negociate.png' alt='negocier'> Negocier une alliance en
-                personne</label><br>
+            <div class="mission-element">
+            <button type="button" id="messager" name="messager" alt="Envoyer un mail de contact">
+                <img src='images/messager.png' alt='messager'>
+            </button><br>
+            <label for="messager">Messager<br><em>Etablir un premier contact</em></label>
+            </div>
+            <div class="mission-element">
+            <button type="button" id="audience" name="audience" alt="Relancer par téléphone">
+                <img src='images/emissaire.png' alt='emissaire'>
+            </button><br>
+            <label for="audience">Emissaire<br><em>Demander une audience</em></label>
+            </div>
+            <div class="mission-element">
+            <button type="button" id="negociation" name="negociation" alt="Obtenir un entretien d'embauche">
+                <img src='images/chef.png' alt='chef de guerre'>
+            </button><br>
+            <label for="negociation">Chef de guerre<br><em>Negocier une alliance en personne</em></label>
             <br>
-            <label alt="Remplir le tableau de suivi des demandes"><img src='images/scroll.png' alt='rapport'> Rapport
-                sur les royaumes voisins rempli
-                :</label>
-            <input type="radio" id="non" name="rapport" value="non" checked>
-            <label for="non">Non</label>
-            <input type="radio" id="oui" name="rapport" value="<img src='images/scroll.png' alt='rapport'>">
-            <label for="oui">Oui</label><br>
+            </div>
         </section>
+
         <section class="prep grid-mission">
             <h2>Consolidation de l'avant-poste</h2>
-            <input type="checkbox" id="soldats" name="soldats" value="<img src='images/trooper.png' alt='soldat'>"
-                alt="Ajouter des contacts sur LinkedIn et autres">
-            <label for="soldats"><img src='images/trooper.png' alt='soldat'> Engager des troupes (relance d'une campagne
-                de recrutement et entrevues avec les
-                soldats)</label><br>
-            <!-- <input type="checkbox" id="rassemblements" name="rassemblements"
-                value="<img src='images/gathering.png' alt='rassemblement'>" alt="Participer à des événements">
-            <label for="rassemblements"><img src='images/gathering.png' alt='rassemblement'> Participer à des
-                rassemblements</label><br> -->
-            <input type="checkbox" id="entrainement" name="entrainement"
-                value="<img src='images/target.png' alt='entraînement'>"
-                alt="Suivre des cours et développer ses compétences">
-            <label for="entrainement"><img src='images/target.png' alt='entraînement'> Entraîner ses troupes</label><br>
-            <input type="checkbox" id="renfort" name="renfort" value="<img src='images/castle.png' alt='fort'>"
-                alt="Développer son porfolio">
-            <label for="renfort"><img src='images/castle.png' alt='fort'> Renforcer ses défenses</label><br>
+            <div class="mission-element">
+            <button type="button" id="soldats" name="soldats" alt="Ajouter des contacts sur LinkedIn et communiquer">
+                <img src='images/ambassadeur.png' alt='ambassadeur'>
+            </button><br>
+            <label for="soldats">Ambassadeur<br><em>Recruter des alliés</em></label>
+            </div>
+            <div class="mission-element">
+            <button type="button" id="entrainement" name="entrainement" alt="Suivre des cours et développer ses compétences">
+                <img src='images/maitre.png' alt="maître d'armes">
+            </button><br>
+            <label for="entrainement">Maître d'armes<br><em>Entraîner ses troupes</em></label>
+            </div>
+            <div class="mission-element">
+            <button type="button" id="renfort" name="renfort" alt="Développer son porfolio">
+                <img src='images/batisseur.png' alt='bâtisseur'>
+            </button><br>
+            <label for="renfort">Bâtisseur<br><em>Renforcer ses défenses</em></label>
+            </div>
         </section>
 
         <div class="deploiement-reco grid-deploiement">
@@ -90,12 +92,18 @@
         </div>
         <div class="deploiement-prep grid-deploiement">
             <div class="soldats deploiement-interne"></div>
-            <div class="rassemblements deploiement-interne"></div>
             <div class="entrainement deploiement-interne"></div>
             <div class="renfort"></div>
         </div>
-        <div class="objectif-reco grid-objectif"></div>
-        <div class="objectif-comm grid-objectif"></div>
+        <div class="objectif-reco grid-objectif">
+            <p><span class="score score-offres">0</span> / <span class="obj obj-offres">3</span><img src='images/aventurier.png' alt='aventurier'><input type="number" id="nombreOffres" name="nombreOffres" min="0" value="3"></p>
+            <p><span class="score score-entreprises">0</span> / <span class="obj obj-entreprises">3</span><img src='images/eclaireur.png' alt='éclaireur'><input type="number" id="nombreEntreprises" name="nombreEntreprises" min="0" value="3"></p>
+            <p><span class="score score-infos">0</span> / <span class="obj obj-infos">6</span><img src='images/espion.png' alt='espion'></p>
+        </div>
+        <div class="objectif-comm grid-objectif">
+            <p><span class="score score-messages">0</span> / <span class="obj obj-messages">3</span><img src='images/messager.png' alt='messager'><input type="number" id="nombreMessages" name="nombreMessages" min="0" value="3"></p>
+            <p><span class="score score-appels">0</span> / <span class="obj obj-appels">3</span><img src='images/emissaire.png' alt='émissaire'><input type="number" id="nombreAppels" name="nombreAppels" min="0" value="3"></p>
+        </div>
         <div class="affichage-rapport grid-objectif"></div>
     </main>
 </body>
