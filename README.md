@@ -3,6 +3,8 @@
 
 Ce programme permet au joueur de suivre son avancement en comparant la recherche d'un emploi à une campagne militaire d'un autre temps.
 
+[Mise en forme en cours]
+
 ---------------------------
 
 Vous incarnez un chef de guerre à la tête d'une troupe de mercenaires, en quête d'un royaume à qui louer vos services. Pour y parvenir, vous allez déployer vos unités sur le terrain : chaque type d'unité correspond à une mission particulière. 
