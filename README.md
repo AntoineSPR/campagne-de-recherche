@@ -18,5 +18,17 @@ Vous pouvez définir vos objectifs journaliers pour certaines missions, et véri
 
 > La phase de préparation : en parallèle, déployez des ambassadeurs pour trouver des alliés (élargir et cultiver son réseau professionnel), des maîtres d'armes pour entraîner vos troupes (développer ses compétences en se formant), et des bâtisseurs pour renforcer son campement (étoffer son portfolio).
 
+---------------------------
+
+INSTRUCTIONS : 
+
+Modifier les objectifs grâce aux flèches près des icônes dans la colonne de droite.
+
+Cliquez sur les icônes à gauche pour déployer les unités dans la colonne centrale et mettre à jour l'avancement des objectifs. Chaque unité est censée être déployée après l'accomplissement de la tâche associée, à la manière d'une to-do list.
+
+Une icône apparaît en bas à droite une fois tous les objectifs remplis. Certaines missions ne correspondent à aucun objectif journalier, elles sont à effectuer en bonus.
+
+---------------------------
+
 License pour les icônes : 
 <a href="https://www.flaticon.com/free-icons/medieval" title="medieval icons">Medieval icons created by Leremy - Flaticon</a>
