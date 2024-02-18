@@ -34,3 +34,4 @@ Une icône apparaît en bas à droite une fois tous les objectifs remplis (et di
 
 License pour les icônes : 
 <a href="https://www.flaticon.com/free-icons/medieval" title="medieval icons">Medieval icons created by Leremy - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/scroll" title="scroll icons">Scroll icon created by Freepik - Flaticon</a>
