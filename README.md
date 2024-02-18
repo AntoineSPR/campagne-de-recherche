@@ -3,7 +3,8 @@
 
 Ce programme permet au joueur de suivre son avancement en comparant la recherche d'un emploi à une campagne militaire d'un autre temps.
 
-///////////
+---------------------------
+
 Vous incarnez un chef de guerre à la tête d'une troupe de mercenaires, en quête d'un royaume à qui louer vos services. Pour y parvenir, vous allez déployer vos unités sur le terrain : chaque type d'unité correspond à une mission particulière. 
 
 Vous pouvez définir vos objectifs journaliers pour certaines missions, et vérifier que tous les objectifs ont été atteints à la fin de la journée de campagne. Trois phases vous sont proposées, correspondant à trois catégories de missions à accomplir :
