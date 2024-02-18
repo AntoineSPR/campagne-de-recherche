@@ -26,7 +26,9 @@ Modifier les objectifs grâce aux flèches près des icônes dans la colonne de 
 
 Cliquez sur les icônes à gauche pour déployer les unités dans la colonne centrale et mettre à jour l'avancement des objectifs. Chaque unité est censée être déployée après l'accomplissement de la tâche associée, à la manière d'une to-do list.
 
-Une icône apparaît en bas à droite une fois tous les objectifs remplis. Certaines missions ne correspondent à aucun objectif journalier, elles sont à effectuer en bonus.
+Le score se met à jour et devient vert une fois l'objectif atteint (et redevient rouge si le score ou l'objectif sont modifiés et ne remplissent plus les conditions).
+
+Une icône apparaît en bas à droite une fois tous les objectifs remplis (et disparaît si les conditions ne sont plus remplies). Certaines missions ne correspondent à aucun objectif journalier, elles sont à effectuer en bonus.
 
 ---------------------------
 
