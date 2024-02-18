@@ -1,36 +1,64 @@
-let deploiementReco = document.querySelector(".deploiement-reco");
-let deploiementComm = document.querySelector(".deploiement-comm");
-let deploiementPrep = document.querySelector(".deploiement-prep");
-let deploiementInterne = document.querySelectorAll(".deploiement-interne");
-let objectifReco = document.querySelector(".objectif-reco");
-let objectifComm = document.querySelector(".objectif-comm");
-let affichageRapport = document.querySelector(".affichage-rapport");
+const deploiementReco = document.querySelector(".deploiement-reco");
+const deploiementComm = document.querySelector(".deploiement-comm");
+const deploiementPrep = document.querySelector(".deploiement-prep");
+const deploiementInterne = document.querySelectorAll(".deploiement-interne");
+const objectifReco = document.querySelector(".objectif-reco");
+const objectifComm = document.querySelector(".objectif-comm");
+const affichageRapport = document.querySelector(".affichage-rapport");
 
-let offre = document.getElementById("offre");
-let entreprise = document.getElementById("entreprise");
-let infos = document.getElementById("infos");
-let messager = document.getElementById("messager");
-let audience = document.getElementById("audience");
-let negociation = document.getElementById("negociation");
-let soldats = document.getElementById("soldats");
-let entrainement = document.getElementById("entrainement");
-let renfort = document.getElementById("renfort");
+const offre = document.getElementById("offre");
+const entreprise = document.getElementById("entreprise");
+const infos = document.getElementById("infos");
+const messager = document.getElementById("messager");
+const audience = document.getElementById("audience");
+const negociation = document.getElementById("negociation");
+const soldats = document.getElementById("soldats");
+const entrainement = document.getElementById("entrainement");
+const renfort = document.getElementById("renfort");
 
-let nombreOffres = document.getElementById("nombreOffres");
-let nombreEntreprises = document.getElementById("nombreEntreprises");
-let nombreMessages = document.getElementById("nombreMessages");
-let nombreAppels = document.getElementById("nombreAppels");
+const offreDeploye = document.querySelector(".offre");
+const entrepriseDeploye = document.querySelector(".entreprise");
+const infosDeploye = document.querySelector(".infos");
+const messagerDeploye = document.querySelector(".messager");
+const audienceDeploye = document.querySelector(".audience");
 
-let scoreOffres = document.querySelector(".score-offres");
-let scoreEntreprises = document.querySelector(".score-entreprises");
-let scoreInfos = document.querySelector(".score-infos");
-let scoreMessages = document.querySelector(".score-messages");
-let scoreAppels = document.querySelector(".score-appels");
+const nombreOffres = document.getElementById("nombreOffres");
+const nombreEntreprises = document.getElementById("nombreEntreprises");
+const nombreMessages = document.getElementById("nombreMessages");
+const nombreAppels = document.getElementById("nombreAppels");
 
-let score = document.querySelectorAll(".score");
-let obj = document.querySelectorAll(".obj");
+const scoreOffres = document.querySelector(".score-offres");
+const scoreEntreprises = document.querySelector(".score-entreprises");
+const scoreInfos = document.querySelector(".score-infos");
+const scoreMessages = document.querySelector(".score-messages");
+const scoreAppels = document.querySelector(".score-appels");
 
-// Fonction pour afficher les objectifs :
+const score = document.querySelectorAll(".score");
+const obj = document.querySelectorAll(".obj");
+
+// Fonction pour mettre à jour la couleur si le score est inférieur à l'objectif, puis : 
+// Faire disparaître l'icône de rapport si les objectifs ne sont plus atteints :
+
+function objectifNonAtteint(){
+    for (let i = 0; i < score.length; i++) {
+        let valeurScore = parseInt(score[i].innerText);
+        let valeurObj = parseInt(obj[i].innerText);
+        if (valeurScore < valeurObj){
+             score[i].style.color = "red";
+             obj[i].style.color = "red";
+         }
+    }
+
+    let toutVert = Array.from(score).every(element => {
+        return element.style.color === "green";
+    });
+    
+    if (toutVert == false) {
+        affichageRapport.innerHTML = ``;
+    }
+}
+
+// Fonction pour afficher les objectifs, et exécuter la fonciton si non atteints :
 
 function afficherObjectif(nombreVise) {
     nombreVise.addEventListener("change", () => {
@@ -45,6 +73,8 @@ function afficherObjectif(nombreVise) {
         objMessages.innerText = `${nombreMessages.value}`;
         let objAppels = document.querySelector(".obj-appels");
         objAppels.innerText = `${nombreAppels.value}`;
+
+        objectifNonAtteint();
     })
 }
 
@@ -62,6 +92,7 @@ function deployerTroupes(troupe, zone) {
     troupe.addEventListener("click", () => {
         let zoneInterne = zone.querySelector(`.${troupe.id}`);
         zoneInterne.innerHTML += `<div>${troupe.innerHTML}</div>`;
+
         switch(troupe) {
             case offre :
                 scoreOffres.innerText = parseInt(scoreOffres.innerText) + 1;
@@ -79,6 +110,7 @@ function deployerTroupes(troupe, zone) {
                 scoreAppels.innerText = parseInt(scoreAppels.innerText) + 1;
                 break;
         }
+
         for (let i = 0; i < score.length; i++) {
             let valeurScore = parseInt(score[i].innerText);
             let valeurObj = parseInt(obj[i].innerText);
@@ -86,14 +118,15 @@ function deployerTroupes(troupe, zone) {
             if (valeurScore === valeurObj) {
                 score[i].style.color = "green";
                 obj[i].style.color = "green";
-            } 
+            }
         }
+
         let toutVert = Array.from(score).every(element => {
             return element.style.color === "green";
         });
         
         if (toutVert) {
-            affichageRapport.innerHTML = `<img src='images/scroll.png' alt='rapport'>`;
+            affichageRapport.innerHTML = `<img src='images/scroll.png' alt='rapport rempli'>`;
         }
     })
 }
@@ -108,13 +141,36 @@ deployerTroupes(soldats, deploiementPrep);
 deployerTroupes(entrainement, deploiementPrep);
 deployerTroupes(renfort, deploiementPrep);
 
-// Fonction pour supprimer le dernier élément de la liste de deploiement en cliquant dans sa zone :
+// Fonction pour supprimer le dernier élément de la liste de deploiement en cliquant dans sa zone puis :
+// Mettre à jour le score de l'élément correspondant, puis :
+// Vérifier si l'objectif est toujours atteint, et appeler la fonction si ce n'est pas le cas : 
+
 
 function supprimerElement(zone) {
     zone.addEventListener("click", () => {
         let listeDeploiement = zone.innerHTML.split("<div>");
         listeDeploiement.pop();
         zone.innerHTML = listeDeploiement.join("<div>");
+
+        switch(zone) {
+            case offreDeploye :
+                scoreOffres.innerText = parseInt(scoreOffres.innerText) - 1;
+                break;
+            case entrepriseDeploye : 
+                scoreEntreprises.innerText = parseInt(scoreEntreprises.innerText) - 1;
+                break;
+            case infosDeploye :
+                scoreInfos.innerText = parseInt(scoreInfos.innerText) - 1;
+                break;
+            case messagerDeploye :
+                scoreMessages.innerText = parseInt(scoreMessages.innerText) - 1;
+                break;
+            case audienceDeploye :
+                scoreAppels.innerText = parseInt(scoreAppels.innerText) - 1;
+                break;
+        }
+        
+        objectifNonAtteint();
     })
 }
 
