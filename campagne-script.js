@@ -142,7 +142,7 @@ deployerTroupes(entrainement, deploiementPrep);
 deployerTroupes(renfort, deploiementPrep);
 
 // Fonction pour supprimer le dernier élément de la liste de deploiement en cliquant dans sa zone puis :
-// Mettre à jour le score de l'élément correspondant, puis :
+// Mettre à jour le score de l'élément correspondant (sans descendre en-dessous de zéro), puis :
 // Vérifier si l'objectif est toujours atteint, et appeler la fonction si ce n'est pas le cas : 
 
 
@@ -151,25 +151,30 @@ function supprimerElement(zone) {
         let listeDeploiement = zone.innerHTML.split("<div>");
         listeDeploiement.pop();
         zone.innerHTML = listeDeploiement.join("<div>");
-
+       
         switch(zone) {
             case offreDeploye :
-                scoreOffres.innerText = parseInt(scoreOffres.innerText) - 1;
+                if (parseInt(scoreOffres.innerText) > 0){
+                scoreOffres.innerText = parseInt(scoreOffres.innerText) - 1;}
                 break;
             case entrepriseDeploye : 
-                scoreEntreprises.innerText = parseInt(scoreEntreprises.innerText) - 1;
+            if (parseInt(scoreEntreprises.innerText) > 0){
+                scoreEntreprises.innerText = parseInt(scoreEntreprises.innerText) - 1;}
                 break;
             case infosDeploye :
-                scoreInfos.innerText = parseInt(scoreInfos.innerText) - 1;
+                if (parseInt(scoreInfos.innerText) > 0){
+                scoreInfos.innerText = parseInt(scoreInfos.innerText) - 1;}
                 break;
             case messagerDeploye :
-                scoreMessages.innerText = parseInt(scoreMessages.innerText) - 1;
+                if (parseInt(scoreMessages.innerText) > 0){
+                scoreMessages.innerText = parseInt(scoreMessages.innerText) - 1;}
                 break;
             case audienceDeploye :
-                scoreAppels.innerText = parseInt(scoreAppels.innerText) - 1;
+                if (parseInt(scoreAppels.innerText) > 0){
+                scoreAppels.innerText = parseInt(scoreAppels.innerText) - 1;}
                 break;
         }
-        
+
         objectifNonAtteint();
     })
 }
