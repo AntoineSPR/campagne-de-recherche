@@ -28,7 +28,7 @@ Cliquez sur les icônes à gauche pour déployer les unités dans la colonne cen
 
 Le score se met à jour et devient vert une fois l'objectif atteint (et redevient rouge si le score ou l'objectif sont modifiés et ne remplissent plus les conditions).
 
-Une icône apparaît en bas à droite une fois tous les objectifs remplis (et disparaît si les conditions ne sont plus remplies). Certaines missions ne correspondent à aucun objectif journalier, elles sont à effectuer en bonus.
+Une icône apparaît en bas à droite une fois tous les objectifs remplis. Certaines missions ne correspondent à aucun objectif journalier, elles sont à effectuer en bonus.
 
 ---------------------------
 
