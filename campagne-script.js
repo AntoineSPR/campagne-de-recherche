@@ -9,56 +9,117 @@ const affichageRapport = document.querySelector(".affichage-rapport");
 const offre = document.getElementById("offre");
 const entreprise = document.getElementById("entreprise");
 const infos = document.getElementById("infos");
-const messager = document.getElementById("messager");
-const audience = document.getElementById("audience");
-const negociation = document.getElementById("negociation");
-const soldats = document.getElementById("soldats");
+const mail = document.getElementById("mail");
+const appel = document.getElementById("appel");
+const entretien = document.getElementById("entretien");
+const reseau = document.getElementById("reseau");
 const entrainement = document.getElementById("entrainement");
-const renfort = document.getElementById("renfort");
+const projet = document.getElementById("projet");
 
 const offreDeploye = document.querySelector(".offre");
 const entrepriseDeploye = document.querySelector(".entreprise");
 const infosDeploye = document.querySelector(".infos");
-const messagerDeploye = document.querySelector(".messager");
-const audienceDeploye = document.querySelector(".audience");
+const mailDeploye = document.querySelector(".mail");
+const appelDeploye = document.querySelector(".appel");
 
 const nombreOffres = document.getElementById("nombreOffres");
 const nombreEntreprises = document.getElementById("nombreEntreprises");
 const nombreMessages = document.getElementById("nombreMessages");
 const nombreAppels = document.getElementById("nombreAppels");
 
-const scoreOffres = document.querySelector(".score-offres");
-const scoreEntreprises = document.querySelector(".score-entreprises");
+const scoreOffres = document.querySelector(".score-offre");
+const scoreEntreprises = document.querySelector(".score-entreprise");
 const scoreInfos = document.querySelector(".score-infos");
-const scoreMessages = document.querySelector(".score-messages");
-const scoreAppels = document.querySelector(".score-appels");
+const scoreMessages = document.querySelector(".score-mail");
+const scoreAppels = document.querySelector(".score-appel");
 
 const score = document.querySelectorAll(".score");
 const obj = document.querySelectorAll(".obj");
 
-// Fonction pour mettre à jour la couleur si le score est inférieur à l'objectif, puis : 
-// Faire disparaître l'icône de rapport si les objectifs ne sont plus atteints :
+let nombreTroupes = {
+    "offre": 0,
+    "entreprise": 0,
+    "infos": 0,
+    "mail" : 0,
+    "appel" : 0,
+    "entretien" : 0,
+    "reseau" : 0, 
+    "entrainement" : 0,
+    "projet" : 0,
+};
 
-function objectifNonAtteint(){
+//////////////////////////////////////////////////////
+// Fonction pour deployer les éléments sélectionnés :
+//////////////////////////////////////////////////////
+
+function deployerTroupes(troupe, zone) {
+    troupe.addEventListener("click", () => {
+        let compte=nombreTroupes[troupe.id];
+    
+    if (compte >= 15) {
+        console.log(`Nombre maximum d'unités ${troupe.id} déployées`);
+        return;
+    }
+    
+    let zoneInterne = zone.querySelector(`.${troupe.id}`);
+        zoneInterne.innerHTML += `<div>${troupe.innerHTML}</div>`;
+    nombreTroupes[troupe.id]++;
+
+    majScore(troupe.id);
+    verifObjectif();
+
+    })
+}
+
+deployerTroupes(offre, deploiementReco);
+deployerTroupes(entreprise, deploiementReco);
+deployerTroupes(infos, deploiementReco);
+deployerTroupes(mail, deploiementComm);
+deployerTroupes(appel, deploiementComm);
+deployerTroupes(entretien, deploiementComm);
+deployerTroupes(reseau, deploiementPrep);
+deployerTroupes(entrainement, deploiementPrep);
+deployerTroupes(projet, deploiementPrep);
+
+//////////////////////////////////////////////////////
+// Fonction pour augmenter le score au déploiement de l'unité correspondante : 
+//////////////////////////////////////////////////////
+
+function majScore(unite) {
+    let scoreElement = document.querySelector(`.score-${unite}`);
+    if (scoreElement) {
+    scoreElement.innerText = nombreTroupes[unite];
+    }
+}
+
+//////////////////////////////////////////////////////
+// Fonction pour changer la couleur du score lorsque l'objectif est atteint, puis
+// Afficher l'icône de rapport lorsque tous les scores sont au vert :
+//////////////////////////////////////////////////////
+
+function verifObjectif() {
     for (let i = 0; i < score.length; i++) {
         let valeurScore = parseInt(score[i].innerText);
         let valeurObj = parseInt(obj[i].innerText);
-        if (valeurScore < valeurObj){
-             score[i].style.color = "red";
-             obj[i].style.color = "red";
-         }
+        
+        if (valeurScore === valeurObj) {
+            score[i].style.color = "green";
+            obj[i].style.color = "green";
+        }
     }
 
     let toutVert = Array.from(score).every(element => {
         return element.style.color === "green";
     });
     
-    if (toutVert == false) {
-        affichageRapport.innerHTML = ``;
+    if (toutVert) {
+        affichageRapport.innerHTML = `<img src='images/scroll.png' alt='rapport rempli'>`;
     }
 }
 
+//////////////////////////////////////////////////////
 // Fonction pour afficher les objectifs, et exécuter la fonciton si non atteints :
+//////////////////////////////////////////////////////
 
 function afficherObjectif(nombreVise) {
     nombreVise.addEventListener("change", () => {
@@ -83,67 +144,11 @@ afficherObjectif(nombreEntreprises);
 afficherObjectif(nombreMessages);
 afficherObjectif(nombreAppels);
 
-// Fonction pour deployer les éléments cochés, puis :
-// Augmenter le score correspondant, puis :
-// Changer la couleur du score lorsque l'objectif est atteint, puis :
-// Afficher l'icône de rapport lorsque tous les scores sont au vert :
-
-function deployerTroupes(troupe, zone) {
-    troupe.addEventListener("click", () => {
-        let zoneInterne = zone.querySelector(`.${troupe.id}`);
-        zoneInterne.innerHTML += `<div>${troupe.innerHTML}</div>`;
-
-        switch(troupe) {
-            case offre :
-                scoreOffres.innerText = parseInt(scoreOffres.innerText) + 1;
-                break;
-            case entreprise : 
-                scoreEntreprises.innerText = parseInt(scoreEntreprises.innerText) + 1;
-                break;
-            case infos :
-                scoreInfos.innerText = parseInt(scoreInfos.innerText) + 1;
-                break;
-            case messager :
-                scoreMessages.innerText = parseInt(scoreMessages.innerText) + 1;
-                break;
-            case audience :
-                scoreAppels.innerText = parseInt(scoreAppels.innerText) + 1;
-                break;
-        }
-
-        for (let i = 0; i < score.length; i++) {
-            let valeurScore = parseInt(score[i].innerText);
-            let valeurObj = parseInt(obj[i].innerText);
-            
-            if (valeurScore === valeurObj) {
-                score[i].style.color = "green";
-                obj[i].style.color = "green";
-            }
-        }
-
-        let toutVert = Array.from(score).every(element => {
-            return element.style.color === "green";
-        });
-        
-        if (toutVert) {
-            affichageRapport.innerHTML = `<img src='images/scroll.png' alt='rapport rempli'>`;
-        }
-    })
-}
-
-deployerTroupes(offre, deploiementReco);
-deployerTroupes(entreprise, deploiementReco);
-deployerTroupes(infos, deploiementReco);
-deployerTroupes(messager, deploiementComm);
-deployerTroupes(audience, deploiementComm);
-deployerTroupes(negociation, deploiementComm);
-deployerTroupes(soldats, deploiementPrep);
-deployerTroupes(entrainement, deploiementPrep);
-deployerTroupes(renfort, deploiementPrep);
-
-// Fonction pour supprimer le dernier élément de la liste de deploiement en cliquant dans sa zone puis :
-// Mettre à jour le score de l'élément correspondant (sans descendre en-dessous de zéro), puis :
+//////////////////////////////////////////////////////
+// Fonction pour supprimer le dernier élément de la liste de deploiement en cliquant dans sa zone puis
+// Mettre à jour le score de l'élément correspondant (sans descendre en-dessous de zéro), puis
 // Vérifier si l'objectif est toujours atteint, et appeler la fonction si ce n'est pas le cas : 
+//////////////////////////////////////////////////////
 
 
 function supprimerElement(zone) {
@@ -151,7 +156,7 @@ function supprimerElement(zone) {
         let listeDeploiement = zone.innerHTML.split("<div>");
         listeDeploiement.pop();
         zone.innerHTML = listeDeploiement.join("<div>");
-       
+
         switch(zone) {
             case offreDeploye :
                 if (parseInt(scoreOffres.innerText) > 0){
@@ -165,11 +170,11 @@ function supprimerElement(zone) {
                 if (parseInt(scoreInfos.innerText) > 0){
                 scoreInfos.innerText = parseInt(scoreInfos.innerText) - 1;}
                 break;
-            case messagerDeploye :
+            case mailDeploye :
                 if (parseInt(scoreMessages.innerText) > 0){
                 scoreMessages.innerText = parseInt(scoreMessages.innerText) - 1;}
                 break;
-            case audienceDeploye :
+            case appelDeploye :
                 if (parseInt(scoreAppels.innerText) > 0){
                 scoreAppels.innerText = parseInt(scoreAppels.innerText) - 1;}
                 break;
@@ -183,8 +188,33 @@ deploiementInterne.forEach(zone => {
     supprimerElement(zone);
 });
 
+//////////////////////////////////////////////////////
+// Fonction pour mettre à jour la couleur si le score est inférieur à l'objectif, puis : 
+// Faire disparaître l'icône de rapport si les objectifs ne sont plus atteints :
+//////////////////////////////////////////////////////
 
+function objectifNonAtteint(){
+    for (let i = 0; i < score.length; i++) {
+        let valeurScore = parseInt(score[i].innerText);
+        let valeurObj = parseInt(obj[i].innerText);
+        if (valeurScore < valeurObj){
+             score[i].style.color = "red";
+             obj[i].style.color = "red";
+         }
+    }
+
+    let toutVert = Array.from(score).every(element => {
+        return element.style.color === "green";
+    });
+    
+    if (toutVert == false) {
+        affichageRapport.innerHTML = ``;
+    }
+}
+
+//////////////////////////////////////////////////////
 // Calcul de la hauteur maximale des zones de déploiement en fonction du viewport et limitation pour conserver les proportions de la grille :
+//////////////////////////////////////////////////////
 
 const hauteurDeploiement = deploiementReco.getBoundingClientRect().height;
 const deploiementInterneElements = document.querySelectorAll('.deploiement-interne');

@@ -7,6 +7,11 @@
     <script src="campagne-script.js" defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Campagne de recherche</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"> 
+    
 </head>
 
 <body>
@@ -27,35 +32,35 @@
             <button type="button" id="entreprise" name="entreprise" alt="Trouver une entreprise à solliciter spontanément">
                 <img src='images/eclaireur.png' alt='eclaireur'>
             </button><br>
-            <label for="entreprise">Eclaireur<br><em>Trouver des royaumes auxquels proposer ses services</em></label>
+            <label for="entreprise">Eclaireur<br><em>Trouver des royaumes à contacter</em></label>
             </div>
             <div class="mission-element">
             <button type="button" id="infos" name="infos" alt="Rassembler des informations sur l'entreprise en vue d'une prise de contact">
                 <img src='images/espion.png' alt='espion'>
             </button><br>
-            <label for="infos">Espion<br><em>Recueillir des informations sur un royaume</em></label>
+            <label for="infos">Espion<br><em>Recueillir des informations</em></label>
             </div>
         </section>
 
         <section class="comm grid-mission">
             <h2>Etablissement des communications</h2>
             <div class="mission-element">
-            <button type="button" id="messager" name="messager" alt="Envoyer un mail de contact">
+            <button type="button" id="mail" name="mail" alt="Envoyer un mail de contact">
                 <img src='images/messager.png' alt='messager'>
             </button><br>
-            <label for="messager">Messager<br><em>Etablir un premier contact</em></label>
+            <label for="mail">Messager<br><em>Etablir un premier contact</em></label>
             </div>
             <div class="mission-element">
-            <button type="button" id="audience" name="audience" alt="Relancer par téléphone">
+            <button type="button" id="appel" name="appel" alt="Relancer par téléphone">
                 <img src='images/emissaire.png' alt='emissaire'>
             </button><br>
-            <label for="audience">Emissaire<br><em>Demander une audience</em></label>
+            <label for="appel">Emissaire<br><em>Demander une audience</em></label>
             </div>
             <div class="mission-element">
-            <button type="button" id="negociation" name="negociation" alt="Obtenir un entretien d'embauche">
+            <button type="button" id="entretien" name="entretien" alt="Obtenir un entretien d'embauche">
                 <img src='images/chef.png' alt='chef de guerre'>
             </button><br>
-            <label for="negociation">Chef de guerre<br><em>Negocier une alliance en personne</em></label>
+            <label for="entretien">Chef de guerre<br><em>Negocier une alliance en personne</em></label>
             <br>
             </div>
         </section>
@@ -63,10 +68,10 @@
         <section class="prep grid-mission">
             <h2>Consolidation de l'avant-poste</h2>
             <div class="mission-element">
-            <button type="button" id="soldats" name="soldats" alt="Ajouter des contacts sur LinkedIn et communiquer">
+            <button type="button" id="reseau" name="reseau" alt="Ajouter des contacts sur LinkedIn et communiquer">
                 <img src='images/ambassadeur.png' alt='ambassadeur'>
             </button><br>
-            <label for="soldats">Ambassadeur<br><em>Recruter des alliés</em></label>
+            <label for="reseau">Ambassadeur<br><em>Recruter des alliés</em></label>
             </div>
             <div class="mission-element">
             <button type="button" id="entrainement" name="entrainement" alt="Suivre des cours et développer ses compétences">
@@ -75,10 +80,10 @@
             <label for="entrainement">Maître d'armes<br><em>Entraîner ses troupes</em></label>
             </div>
             <div class="mission-element">
-            <button type="button" id="renfort" name="renfort" alt="Développer son porfolio">
+            <button type="button" id="projet" name="projet" alt="Développer son porfolio">
                 <img src='images/batisseur.png' alt='bâtisseur'>
             </button><br>
-            <label for="renfort">Bâtisseur<br><em>Renforcer ses défenses</em></label>
+            <label for="projet">Bâtisseur<br><em>Renforcer ses défenses</em></label>
             </div>
         </section>
 
@@ -90,26 +95,26 @@
             <div class="infos deploiement-interne"></div>
         </div>
         <div class="deploiement-comm grid-deploiement">
-            <div class="messager deploiement-interne"></div>
-            <div class="audience deploiement-interne"></div>
-            <div class="negociation deploiement-interne"></div>
+            <div class="mail deploiement-interne"></div>
+            <div class="appel deploiement-interne"></div>
+            <div class="entretien deploiement-interne"></div>
         </div>
         <div class="deploiement-prep grid-deploiement">
-            <div class="soldats deploiement-interne"></div>
+            <div class="reseau deploiement-interne"></div>
             <div class="entrainement deploiement-interne"></div>
-            <div class="renfort deploiement-interne"></div>
+            <div class="projet deploiement-interne"></div>
         </div>
 
         <!-- Colonne objectif :  -->
 
         <div class="objectif-reco grid-objectif">
-            <p><span class="score score-offres">0</span> / <span class="obj obj-offres">3</span><img src='images/aventurier.png' alt='aventurier'><input type="number" id="nombreOffres" name="nombreOffres" min="0" value="3"></p>
-            <p><span class="score score-entreprises">0</span> / <span class="obj obj-entreprises">3</span><img src='images/eclaireur.png' alt='éclaireur'><input type="number" id="nombreEntreprises" name="nombreEntreprises" min="0" value="3"></p>
+            <p><span class="score score-offre">0</span> / <span class="obj obj-offres">3</span><img src='images/aventurier.png' alt='aventurier'><input type="number" id="nombreOffres" name="nombreOffres" min="0" max="15" value="3"></p>
+            <p><span class="score score-entreprise">0</span> / <span class="obj obj-entreprises">3</span><img src='images/eclaireur.png' alt='éclaireur'><input type="number" id="nombreEntreprises" name="nombreEntreprises" min="0" max="15" value="3"></p>
             <p><span class="score score-infos">0</span> / <span class="obj obj-infos">6</span><img src='images/espion.png' alt='espion'></p>
         </div>
         <div class="objectif-comm grid-objectif">
-            <p><span class="score score-messages">0</span> / <span class="obj obj-messages">3</span><img src='images/messager.png' alt='messager'><input type="number" id="nombreMessages" name="nombreMessages" min="0" value="3"></p>
-            <p><span class="score score-appels">0</span> / <span class="obj obj-appels">3</span><img src='images/emissaire.png' alt='émissaire'><input type="number" id="nombreAppels" name="nombreAppels" min="0" value="3"></p>
+            <p><span class="score score-mail">0</span> / <span class="obj obj-messages">3</span><img src='images/messager.png' alt='messager'><input type="number" id="nombreMessages" name="nombreMessages" min="0" max="15" value="3"></p>
+            <p><span class="score score-appel">0</span> / <span class="obj obj-appels">3</span><img src='images/emissaire.png' alt='émissaire'><input type="number" id="nombreAppels" name="nombreAppels" min="0" max="15" value="3"></p>
         </div>
         <div class="affichage-rapport grid-objectif"></div>
     </main>

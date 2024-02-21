@@ -2,6 +2,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    --color-primary : cornsilk;
+    --color-secondary : wheat;
+    --color-tertiary : azure;
+}
+
+body {
+    background-color: var(--color-tertiary);
+    font-family: Cinzel, serif;
 }
 
 main {
@@ -18,24 +26,58 @@ main {
     height: 97vh;
 }
 
+em{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+}
+
+label {
+    font-weight: bold;
+}
+
+h1, 
+.grid-deploiement,
+.grid-objectif {
+    border: none;
+    border-radius : 5px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 4px 6px;
+}
+
+h1 {
+    grid-area: title;
+    text-align: center;
+    padding: 1%;
+    text-transform: uppercase;
+    background-color: var(--color-secondary);
+    font-family: Cinzel;
+}
+
 .grid-deploiement {
-    border: solid black 2px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    background-color: var(--color-primary);
 }
 
 .deploiement-interne {
     display: grid;
     grid-template-columns : repeat(auto-fit, minmax(min(50px,100%), 1fr));
     overflow-y: hidden;
+    border-right: 3px dashed var(--color-tertiary);
+}
+
+.infos,
+.entretien,
+.projet {
+    border: none;
 }
 
 .grid-objectif {
-    border: solid black 2px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: var(--color-secondary);
 }
 
 .grid-mission {
@@ -89,14 +131,6 @@ main {
     grid-area: affichage-rapport;
 }
 
-h1 {
-    grid-area: title;
-    text-align: center;
-    padding: 1%;
-    text-transform: uppercase;
-    border: solid black 2px;
-}
-
 img {
     width: auto;
     height: 2em;
@@ -107,11 +141,31 @@ button img {
     width: auto;
 }
 
+button {
+    background-color: var(--color-secondary); 
+    border-radius : 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 1.95px 1.95px 2.6px;
+}
+
+button:active {
+    transform : translate(3px, 3px);
+    box-shadow: none;
+}
+
+button:hover {
+    opacity: 80%;
+}
+
 input[type='number']{
     max-width: 17px;
     height: 30px;
     font-size : 2em;
 } 
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  opacity: 1;
+}
 
 .obj, 
 .score {
