@@ -222,3 +222,21 @@ const deploiementInterneElements = document.querySelectorAll('.deploiement-inter
 deploiementInterneElements.forEach(element => {
     element.style.maxHeight = `${hauteurDeploiement}px`;
 });
+
+//////////////////////////////////////////////////////
+// Comportement des boutons :
+//////////////////////////////////////////////////////
+
+const boutons = document.querySelectorAll("button");
+
+boutons.forEach(bouton => {
+bouton.addEventListener("click", () => {
+    bouton.style.transition = "transform 70ms linear";
+    bouton.style.transform = "translate(2px, 2px)"; 
+    bouton.style.boxShadow = "none";
+    setTimeout(() => {
+        bouton.style.transform = "none";
+        bouton.style.boxShadow = "rgba(0, 0, 0, 0.35) 1.95px 1.95px 2.6px";
+    }, 70);
+})
+})
