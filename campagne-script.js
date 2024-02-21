@@ -118,7 +118,7 @@ function verifObjectif() {
 }
 
 //////////////////////////////////////////////////////
-// Fonction pour afficher les objectifs, et exécuter la fonciton si non atteints :
+// Fonction pour modifier les objectifs et vérifier leur avancement : 
 //////////////////////////////////////////////////////
 
 function afficherObjectif(nombreVise) {
@@ -159,8 +159,10 @@ function supprimerElement(zone) {
         zone.innerHTML = listeDeploiement.join("<div>");
 
         let typeTroupe = zone.classList[0];
-        nombreTroupes[typeTroupe]--;
-        majScore(typeTroupe);
+        if (nombreTroupes[typeTroupe] > 0) {
+            nombreTroupes[typeTroupe]--;
+            majScore(typeTroupe);
+        }
 
         objectifNonAtteint();
     })

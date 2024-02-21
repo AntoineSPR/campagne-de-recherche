@@ -15,18 +15,18 @@ body {
 .jeu {
     display: grid;
     grid-template-columns: 1fr 1fr 0.2fr;
-    grid-template-rows: 0.2fr 1fr 1fr 1fr;
-    grid-template-areas: "title title title"
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
         "reco deploiement-reco objectif-reco"
         "comm deploiement-comm objectif-comm"
         "prep deploiement-prep affichage-rapport";
     gap: 1vh 1vw;
     margin: 1vh 1vw;
     width: 97vw;
-    height: 97vh;
+    height: 86vh;
 }
 
-em{
+em {
     font-family: Montserrat;
     font-style: normal;
     font-weight: normal;
@@ -35,8 +35,8 @@ em{
 label {
     font-weight: bold;
 }
-
-h1, 
+ 
+header,
 .grid-deploiement,
 .grid-objectif {
     border: none;
@@ -44,13 +44,37 @@ h1,
     box-shadow: rgba(149, 157, 165, 0.2) 0px 4px 6px;
 }
 
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-secondary);
+    margin: 1vh 1vw;
+    height: 10vh;
+    width: 97vw;
+}
+
+nav a {
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+nav a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
 h1 {
-    grid-area: title;
-    text-align: center;
     padding: 1%;
     text-transform: uppercase;
-    background-color: var(--color-secondary);
     font-family: Cinzel;
+    margin: 0;
+    flex: 1;
+    text-align: center;
+}
+
+nav {
+    padding: 20px;
 }
 
 .grid-deploiement {
@@ -182,10 +206,46 @@ input[type="number"]::-webkit-outer-spin-button {
 /* Page d'intro (en cours) */
 
 .texte-intro {
-    font-family : Philosopher;
-    padding: 10px;
+    font-family : Philosopher, serif;
+    font-size : 1.2em;
+    padding: 20px;
+    text-align: justify;
+    line-height: 1.5;
 }
 
 .titre-intro {
     text-align: center;
 }
+
+strong {
+    font-family: Cinza;
+}
+
+.legende {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+}
+
+footer {
+    font-family: Montserrat, sans-serif;
+    text-align: right;
+}
+
+.pitch {
+    text-align: center;
+    padding: 8% 20%;
+}
+
+.instructions {
+    text-align: justify;
+}
+
+/* nav {
+    position : absolute; 
+    top : 13px;
+    right: 13px; 
+    padding: 10px;
+    background-color: var(--color-tertiary);
+    border-radius: 5px;
+} */
