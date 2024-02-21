@@ -82,7 +82,7 @@ deployerTroupes(entrainement, deploiementPrep);
 deployerTroupes(projet, deploiementPrep);
 
 //////////////////////////////////////////////////////
-// Fonction pour augmenter le score au déploiement de l'unité correspondante : 
+// Fonction pour modifier le score au déploiement/retrait de l'unité correspondante : 
 //////////////////////////////////////////////////////
 
 function majScore(unite) {
@@ -157,35 +157,9 @@ function supprimerElement(zone) {
         listeDeploiement.pop();
         zone.innerHTML = listeDeploiement.join("<div>");
 
-        nombreTroupes[zone.classList[0]]--;
-
-        switch(zone) {
-            case offreDeploye :
-                if (parseInt(scoreOffres.innerText) > 0){
-                scoreOffres.innerText = parseInt(scoreOffres.innerText) - 1;
-                nombreTroupes["offre"]--;}
-                break;
-            case entrepriseDeploye : 
-            if (parseInt(scoreEntreprises.innerText) > 0){
-                scoreEntreprises.innerText = parseInt(scoreEntreprises.innerText) - 1;
-                nombreTroupes["entreprise"]--;}
-                break;
-            case infosDeploye :
-                if (parseInt(scoreInfos.innerText) > 0){
-                scoreInfos.innerText = parseInt(scoreInfos.innerText) - 1;
-                nombreTroupes["infos"]--;}
-                break;
-            case mailDeploye :
-                if (parseInt(scoreMessages.innerText) > 0){
-                scoreMessages.innerText = parseInt(scoreMessages.innerText) - 1;
-                nombreTroupes["mail"]--;}
-                break;
-            case appelDeploye :
-                if (parseInt(scoreAppels.innerText) > 0){
-                scoreAppels.innerText = parseInt(scoreAppels.innerText) - 1;
-                nombreTroupes["appel"]--;}
-                break;
-        }
+        let typeTroupe = zone.classList[0];
+        nombreTroupes[typeTroupe]--;
+        majScore(typeTroupe);
 
         objectifNonAtteint();
     })
