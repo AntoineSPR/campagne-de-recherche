@@ -12,7 +12,7 @@ body {
     font-family: Cinzel, serif;
 }
 
-main {
+.jeu {
     display: grid;
     grid-template-columns: 1fr 1fr 0.2fr;
     grid-template-rows: 0.2fr 1fr 1fr 1fr;
@@ -131,6 +131,10 @@ h1 {
     grid-area: affichage-rapport;
 }
 
+.affichage-rapport img {
+    transform: scale(2);
+}
+
 img {
     width: auto;
     height: 2em;
@@ -147,17 +151,12 @@ button {
     box-shadow: rgba(0, 0, 0, 0.35) 1.95px 1.95px 2.6px;
 }
 
-button:active {
-    box-shadow: none;
-}
-
 button:hover {
     opacity: 80%;
 }
 
 label {
     visibility: hidden;
-    margin-top: 2em;
 }
 
 button:hover ~ label {
@@ -178,4 +177,15 @@ input[type="number"]::-webkit-outer-spin-button {
 .obj, 
 .score {
     color: red;
+}
+
+/* Page d'intro (en cours) */
+
+.texte-intro {
+    font-family : Philosopher;
+    padding: 10px;
+}
+
+.titre-intro {
+    text-align: center;
 }

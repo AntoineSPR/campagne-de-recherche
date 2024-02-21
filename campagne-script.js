@@ -102,7 +102,7 @@ function verifObjectif() {
         let valeurScore = parseInt(score[i].innerText);
         let valeurObj = parseInt(obj[i].innerText);
         
-        if (valeurScore === valeurObj) {
+        if (valeurScore >= valeurObj) {
             score[i].style.color = "green";
             obj[i].style.color = "green";
         }
@@ -113,7 +113,7 @@ function verifObjectif() {
     });
     
     if (toutVert) {
-        affichageRapport.innerHTML = `<img src='images/scroll.png' alt='rapport rempli'>`;
+        affichageRapport.innerHTML = `<img src='images/victoire.png' alt='objectif atteint'>`;
     }
 }
 
@@ -135,6 +135,7 @@ function afficherObjectif(nombreVise) {
         let objAppels = document.querySelector(".obj-appels");
         objAppels.innerText = `${nombreAppels.value}`;
 
+        verifObjectif();
         objectifNonAtteint();
     })
 }
