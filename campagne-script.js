@@ -157,26 +157,33 @@ function supprimerElement(zone) {
         listeDeploiement.pop();
         zone.innerHTML = listeDeploiement.join("<div>");
 
+        nombreTroupes[zone.classList[0]]--;
+
         switch(zone) {
             case offreDeploye :
                 if (parseInt(scoreOffres.innerText) > 0){
-                scoreOffres.innerText = parseInt(scoreOffres.innerText) - 1;}
+                scoreOffres.innerText = parseInt(scoreOffres.innerText) - 1;
+                nombreTroupes["offre"]--;}
                 break;
             case entrepriseDeploye : 
             if (parseInt(scoreEntreprises.innerText) > 0){
-                scoreEntreprises.innerText = parseInt(scoreEntreprises.innerText) - 1;}
+                scoreEntreprises.innerText = parseInt(scoreEntreprises.innerText) - 1;
+                nombreTroupes["entreprise"]--;}
                 break;
             case infosDeploye :
                 if (parseInt(scoreInfos.innerText) > 0){
-                scoreInfos.innerText = parseInt(scoreInfos.innerText) - 1;}
+                scoreInfos.innerText = parseInt(scoreInfos.innerText) - 1;
+                nombreTroupes["infos"]--;}
                 break;
             case mailDeploye :
                 if (parseInt(scoreMessages.innerText) > 0){
-                scoreMessages.innerText = parseInt(scoreMessages.innerText) - 1;}
+                scoreMessages.innerText = parseInt(scoreMessages.innerText) - 1;
+                nombreTroupes["mail"]--;}
                 break;
             case appelDeploye :
                 if (parseInt(scoreAppels.innerText) > 0){
-                scoreAppels.innerText = parseInt(scoreAppels.innerText) - 1;}
+                scoreAppels.innerText = parseInt(scoreAppels.innerText) - 1;
+                nombreTroupes["appel"]--;}
                 break;
         }
 
@@ -224,19 +231,19 @@ deploiementInterneElements.forEach(element => {
 });
 
 //////////////////////////////////////////////////////
-// Comportement des boutons :
+// Comportement visuel des boutons :
 //////////////////////////////////////////////////////
 
 const boutons = document.querySelectorAll("button");
 
 boutons.forEach(bouton => {
-bouton.addEventListener("click", () => {
-    bouton.style.transition = "transform 70ms linear";
-    bouton.style.transform = "translate(2px, 2px)"; 
-    bouton.style.boxShadow = "none";
-    setTimeout(() => {
-        bouton.style.transform = "none";
-        bouton.style.boxShadow = "rgba(0, 0, 0, 0.35) 1.95px 1.95px 2.6px";
-    }, 70);
-})
+    bouton.addEventListener("click", () => {
+        bouton.style.transition = "transform 70ms linear";
+        bouton.style.transform = "translate(2px, 2px)";
+        bouton.style.boxShadow = "none";
+        setTimeout(() => {
+            bouton.style.transform = "none";
+            bouton.style.boxShadow = "";
+        }, 70);
+    })
 })
