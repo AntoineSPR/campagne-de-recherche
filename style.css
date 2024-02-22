@@ -12,6 +12,10 @@ body {
     font-family: Cinzel, serif;
 }
 
+a{
+    color: inherit;
+}
+
 .jeu {
     display: grid;
     grid-template-columns: 1fr 1fr 0.2fr;
@@ -37,6 +41,7 @@ label {
 }
  
 header,
+.intro h2,
 .grid-deploiement,
 .grid-objectif {
     border: none;
@@ -87,6 +92,11 @@ h1 {
     transform: translateX(50%);
 }
 
+.jeu h2 {
+    grid-area : titre2;
+    text-align: center;
+}
+
 .grid-deploiement {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -118,11 +128,6 @@ h1 {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: "titre2 titre2 titre2";
-}
-
-.grid-mission h2 {
-    grid-area : titre2;
-    text-align: center;
 }
 
 .mission-element {
@@ -234,7 +239,9 @@ strong {
 .legende {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 30px;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 10px 30px;
+    grid-auto-flow: column;
 }
 
 footer {
@@ -249,4 +256,11 @@ footer {
 
 .instructions {
     text-align: justify;
+    padding: 3% 7%;
+}
+
+.intro h2 {
+    background-color: var(--color-secondary);
+    width: 97vw;
+    margin: auto;
 }
