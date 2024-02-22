@@ -196,6 +196,8 @@ button:hover {
 
 label {
     visibility: hidden;
+    display: inline-block;
+    padding-top: 10px;
 }
 
 button:hover ~ label {
