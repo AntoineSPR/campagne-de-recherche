@@ -46,12 +46,26 @@ header,
 
 header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     background-color: var(--color-secondary);
     margin: 1vh 1vw;
     height: 10vh;
     width: 97vw;
+    position: relative;
+}
+
+nav {
+    padding: 20px;
+    position: absolute;
+}
+
+.vers-campagne {
+    position: absolute;
+    right: 2%;
+}
+
+.vers-intro {
+    left: 2%;
 }
 
 nav a {
@@ -68,13 +82,9 @@ h1 {
     padding: 1%;
     text-transform: uppercase;
     font-family: Cinzel;
-    margin: 0;
-    flex: 1;
-    text-align: center;
-}
-
-nav {
-    padding: 20px;
+    position: absolute;
+    right: 50%;
+    transform: translateX(50%);
 }
 
 .grid-deploiement {
@@ -203,7 +213,7 @@ input[type="number"]::-webkit-outer-spin-button {
     color: red;
 }
 
-/* Page d'intro (en cours) */
+/* Page d'intro */
 
 .texte-intro {
     font-family : Philosopher, serif;
@@ -240,12 +250,3 @@ footer {
 .instructions {
     text-align: justify;
 }
-
-/* nav {
-    position : absolute; 
-    top : 13px;
-    right: 13px; 
-    padding: 10px;
-    background-color: var(--color-tertiary);
-    border-radius: 5px;
-} */
