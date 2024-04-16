@@ -3,7 +3,7 @@
 
 Ce programme permet au joueur de suivre son avancement en comparant la recherche d'un emploi à une campagne militaire d'un autre temps.
 
-[Mise en forme et back-end en cours]
+[En cours de refonte graphique avec Figma / back-end à venir]
 Aperçu : https://antoinespr.github.io/campagne-de-recherche/
 
 ---------------------------
