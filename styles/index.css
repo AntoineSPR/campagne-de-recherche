@@ -40,9 +40,9 @@ footer {
     display: flex;
     align-items: center;
     height: 10vh;
-    width: 100vw;
+    width: 100vw;   
     position: relative;
-    background-image: url(images/board.svg);
+    background-image: url(../media/board.svg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: 130vw 20vh;
@@ -181,14 +181,14 @@ button:hover {
 }
 
 .grid-mission button {
-    background-image: url(images/board.svg);
+    background-image: url(../media/board.svg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: fill;
 }
 
 .grid-mission h2 {
-    background-image: url(images/scroll.png);
+    background-image: url(../media/scroll.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: 500px 100px;
@@ -200,21 +200,21 @@ button:hover {
 }
 
 .grid-mission {
-    background-image: url(images/wood.jpg);
+    background-image: url(../media/wood.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: fill;
 }
 
 .grid-deploiement {
-    background-image: url(images/grass.jpg);
+    background-image: url(../media/grass.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: fill;
 }
 
 .grid-objectif {
-     background-image: url(images/board.svg);
+     background-image: url(../media/board.svg);
      background-position: center;
      background-repeat: no-repeat;
      background-size: fill;
