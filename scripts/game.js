@@ -65,6 +65,7 @@ function verifObjectif() {
     if (toutVert) {
         victoryImage.style = `opacity: 1`;
         victoryText.innerText = `Objectif atteint !`;
+        victory.style.backgroundColor = `rgba(245, 222, 179, .8)`; 
     }
 }
 
@@ -145,5 +146,6 @@ function objectifNonAtteint(){
     if (toutVert == false) {
         victoryImage.style = `opacity : 0.5`;
         victoryText.innerText = `Objectif en vue`;
+        victory.style.background = `none`;
     }
 }

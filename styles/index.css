@@ -207,6 +207,7 @@ button:hover~label {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    padding-top: 50px;
 }
 
 .grid-objectif {
@@ -219,7 +220,10 @@ button:hover~label {
 .victory{
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
+    border-radius: 20px;
+    padding: 20px 0 0 0;
+    margin: 70px 10px 50px 10px;
 }
 
 .victory img {
@@ -229,7 +233,8 @@ button:hover~label {
 
 .victory p {
     background: none;
-    margin-top: 20px;
+    margin: 20px 0 0 0;
+    padding: 0;
     text-align: center;
 }
 
