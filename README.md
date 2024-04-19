@@ -3,11 +3,9 @@
 
 Ce programme permet au joueur de suivre son avancement en comparant la recherche d'un emploi à une campagne militaire d'un autre temps.
 
-[En cours de refonte graphique avec Figma / back-end à venir]
+[En cours de refonte graphique avec Figma sur la branche "horizontal-makeover" // back-end à venir]
 
-Aperçu de la version actuelle du site : https://antoinespr.github.io/campagne-de-recherche/
-
-Aperçu du nouveau design (en cours d'amélioration) : https://design.penpot.app/#/view/61b3a512-985c-80ca-8004-352f78393c74?page-id=61b3a512-985c-80ca-8004-352f78393c75&section=interactions&index=0&share-id=b4ce4fde-fc7c-81a2-8004-356585eef5cc
+Aperçu de la première version du site : https://antoinespr.github.io/campagne-de-recherche/
 
 ---------------------------
 

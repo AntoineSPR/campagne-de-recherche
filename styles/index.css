@@ -36,13 +36,13 @@ em {
 footer {
     display: flex;
     align-items: center;
-    height: 10vh;
+    height: 80px;
     width: 100vw;
     position: relative;
     background-image: url(../media/board.svg);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 130vw 50vh;
+    background-size: 130vw 200px;
 }
 
 footer h1 {
