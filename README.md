@@ -52,4 +52,3 @@ License pour les icônes :
 
 <a href="https://www.freepik.com/free-vector/cartoon-set-wooden-signboards_7416537.htm#query=wooden%20board&position=3&from_view=keyword&track=ais&uuid=64444b34-9a16-4bfe-92fc-41ea69e150c0">Image by pch.vector</a> on Freepik
 
-<a href="https://www.freepik.com/free-photo/wooden-natural-floor-decoration-concept_3001886.htm#fromView=search&page=1&position=4&uuid=047a96f1-a67b-4617-9671-67b633a747e3">Image by rawpixel.com on Freepik</a>
