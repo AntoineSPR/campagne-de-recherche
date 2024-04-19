@@ -4,7 +4,9 @@ const deploiementPrep = document.querySelector(".deploiement-prep");
 const deploiementInterne = document.querySelectorAll(".deploiement-interne");
 const objectifReco = document.querySelector(".objectif-reco");
 const objectifComm = document.querySelector(".objectif-comm");
-const affichageRapport = document.querySelector(".victory");
+const victory = document.querySelector(".victory");
+const victoryImage = document.querySelector(".victory img"); 
+const victoryText = document.querySelector(".victory p");
 
 const offre = document.getElementById("offre");
 const entreprise = document.getElementById("entreprise");

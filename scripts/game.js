@@ -44,7 +44,7 @@ function majScore(unite) {
 
 //////////////////////////////////////////////////////
 // Fonction pour changer la couleur du score lorsque l'objectif est atteint, puis
-// Afficher l'icône de rapport lorsque tous les scores sont au vert :
+// Afficher l'icône de victoire lorsque tous les scores sont au vert :
 //////////////////////////////////////////////////////
 
 function verifObjectif() {
@@ -63,7 +63,8 @@ function verifObjectif() {
     });
     
     if (toutVert) {
-        affichageRapport.innerHTML = `<img src='images/victoire.png' alt='objectif atteint'>`;
+        victoryImage.style = `opacity: 1`;
+        victoryText.innerText = `Objectif atteint !`;
     }
 }
 
@@ -124,7 +125,7 @@ deploiementInterne.forEach(zone => {
 
 //////////////////////////////////////////////////////
 // Fonction pour mettre à jour la couleur si le score est inférieur à l'objectif, puis : 
-// Faire disparaître l'icône de rapport si les objectifs ne sont plus atteints :
+// Réinitialise l'icône de victoire si les objectifs ne sont plus atteints :
 //////////////////////////////////////////////////////
 
 function objectifNonAtteint(){
@@ -142,17 +143,7 @@ function objectifNonAtteint(){
     });
     
     if (toutVert == false) {
-        affichageRapport.innerHTML = ``;
+        victoryImage.style = `opacity : 0.5`;
+        victoryText.innerText = `Objectif en vue`;
     }
 }
-
-//////////////////////////////////////////////////////
-// Calcul de la hauteur maximale des zones de déploiement en fonction du viewport et limitation pour conserver les proportions de la grille :
-//////////////////////////////////////////////////////
-
-const hauteurDeploiement = deploiementReco.getBoundingClientRect().height;
-const deploiementInterneElements = document.querySelectorAll('.deploiement-interne');
-
-deploiementInterneElements.forEach(element => {
-    element.style.maxHeight = `${hauteurDeploiement}px`;
-});

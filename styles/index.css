@@ -216,8 +216,21 @@ button:hover~label {
     align-items: center;
 }
 
+.victory{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
 .victory img {
     transform: scale(2);
+    opacity: 0.5;
+}
+
+.victory p {
+    background: none;
+    margin-top: 20px;
+    text-align: center;
 }
 
 input[type='number'] {
