@@ -2,27 +2,28 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    --color-primary : cornsilk;
-    --color-secondary : wheat;
-    --color-tertiary : azure;
+    --color-primary: cornsilk;
+    --color-secondary: wheat;
+    --color-tertiary: azure;
 }
 
 body {
     font-family: Cinzel, serif;
 }
 
-a{
+a {
     color: inherit;
 }
 
-.jeu {
+img {
+    width: auto;
+    height: 2em;
+}
+
+main {
     display: grid;
     grid-template-columns: 1fr 1fr 0.2fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-areas:
-        "reco deploiement-reco objectif-reco"
-        "comm deploiement-comm objectif-comm"
-        "prep deploiement-prep affichage-rapport";
+    grid-template-rows: 1fr;
     width: 100vw;
 }
 
@@ -32,41 +33,27 @@ em {
     font-weight: normal;
 }
 
-label {
-    font-weight: bold;
-}
-
 footer {
     display: flex;
     align-items: center;
     height: 10vh;
-    width: 100vw;   
+    width: 100vw;
     position: relative;
     background-image: url(../media/board.svg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: 130vw 20vh;
-    }
-    
+}
+
 footer h1 {
-        padding: 1%;
-        text-transform: uppercase;
-        font-family: Cinzel;
-        margin: auto;
-    }    
+    padding: 1%;
+    text-transform: uppercase;
+    font-family: Cinzel;
+    margin: auto;
+}
 
 nav {
-    padding: 20px;
-    position: absolute;
-}
-
-.vers-campagne {
-    position: absolute;
-    right: 2%;
-}
-
-.vers-intro {
-    left: 2%;
+    padding: 20px 0px 20px 100px;
 }
 
 nav a {
@@ -79,112 +66,25 @@ nav a:visited {
     color: inherit;
 }
 
-.jeu h2 {
-    grid-area : titre2;
-    text-align: center;
-}
-
-.grid-deploiement {
+.mission,
+.deployment,
+.objectives {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    background-color: var(--color-primary);
+    grid-template-rows: 1fr 1fr 1fr;
 }
 
-.deploiement-interne {
-    display: grid;
-    grid-template-columns : repeat(auto-fit, minmax(min(50px,100%), 1fr));
-    overflow-y: hidden;
-}
+/* Colonne mission */
 
-.infos,
-.entretien,
-.projet {
-    border: none;
-}
-
-.grid-objectif {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--color-secondary);
+.mission {
+    background-image: url(../media/wood.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: fill;
 }
 
 .grid-mission {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas: "titre2 titre2 titre2";
-}
-
-.mission-element {
-    text-align: center;
-}
-
-.reco {
-    grid-area: reco;
-}
-
-.deploiement-reco {
-    grid-area: deploiement-reco;
-}
-
-.objectif-reco {
-    grid-area: objectif-reco;
-}
-
-.comm {
-    grid-area: comm;
-}
-
-.deploiement-comm {
-    grid-area: deploiement-comm;
-}
-
-.objectif-comm {
-    grid-area: objectif-comm;
-}
-
-.prep {
-    grid-area: prep;
-}
-
-.deploiement-prep {
-    grid-area: deploiement-prep;
-}
-
-.affichage-rapport {
-    grid-area: affichage-rapport;
-}
-
-.affichage-rapport img {
-    transform: scale(2);
-}
-
-img {
-    width: auto;
-    height: 2em;
-}
-
-button img {
-    height: 70px;
-    width: auto;
-}
-
-button {
-    /* background-color: var(--color-secondary);  */
-    border-radius : 5px;
-    box-shadow: rgba(0, 0, 0, 0.35) 1.95px 1.95px 2.6px;
-}
-
-button:hover {
-    opacity: 80%;
-}
-
-.grid-mission button {
-    background-image: url(../media/board.svg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: fill;
 }
 
 .grid-mission h2 {
@@ -197,93 +97,94 @@ button:hover {
     align-items: center;
     justify-content: center;
     font-size: 1.2em;
+    grid-column: span 3;
+    text-align: center;
+}   
+
+.mission-element {
+    text-align: center;
 }
 
-.grid-mission {
-    background-image: url(../media/wood.jpg);
-    background-repeat: no-repeat;
+button {
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 1.95px 1.95px 2.6px;
+    background-image: url(../media/board.svg);
     background-position: center;
+    background-repeat: no-repeat;
     background-size: fill;
 }
 
-.grid-deploiement {
-    background-image: url(../media/grass.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: fill;
+button:hover {
+    opacity: 80%;
 }
 
-.grid-objectif {
-     background-image: url(../media/board.svg);
-     background-position: center;
-     background-repeat: no-repeat;
-     background-size: fill;
+button img {
+    height: 70px;
+    width: auto;
 }
 
 label {
     visibility: hidden;
     display: inline-block;
     padding-top: 10px;
+    font-weight: bold;
 }
 
-button:hover ~ label {
+button:hover~label {
     visibility: visible;
 }
 
-input[type='number']{
+/* Colonne deploiement */
+
+.deployment {
+    background-color: var(--color-primary);
+    background-image: url(../media/grass.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: fill;
+}
+
+.grid-deploiement {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.deploiement-interne {
+    overflow-y: hidden;
+}
+
+/*Colonne objectifs */
+
+.objectives {
+    background-image: url(../media/board.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: fill;
+}
+
+.grid-objectif {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.victory img {
+    transform: scale(2);
+}
+
+input[type='number'] {
     max-width: 17px;
     height: 30px;
-    font-size : 2em;
-} 
+    font-size: 2em;
+}
 
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
-  opacity: 1;
+    opacity: 1;
 }
 
-.obj, 
+.obj,
 .score {
     color: red;
-}
-
-/* Page d'intro */
-
-.texte-intro {
-    font-family : Philosopher, serif;
-    font-size : 1.2em;
-    padding: 20px;
-    text-align: justify;
-    line-height: 1.5;
-}
-
-.titre-intro {
-    text-align: center;
-}
-
-strong {
-    font-family: Cinza;
-}
-
-.legende {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    gap: 10px 30px;
-    grid-auto-flow: column;
-}
-
-.pitch {
-    text-align: center;
-    padding: 8% 20%;
-}
-
-.instructions {
-    text-align: justify;
-    padding: 3% 7%;
-}
-
-.intro h2 {
-    background-color: var(--color-secondary);
-    width: 97vw;
-    margin: auto;
 }
