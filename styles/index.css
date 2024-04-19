@@ -184,10 +184,20 @@ button:hover~label {
 .grid-deploiement {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+}
+
+.grid-deploiement:nth-child(2) {
     background-image: url(../media/fence.png);
-    background-position: bottom;
     background-size: 100px 50px;
     background-repeat: repeat-x;
+    background-position: bottom;
+}
+
+.grid-deploiement:nth-child(4) {
+    background-image: url(../media/fence.png);
+    background-size: 100px 50px;
+    background-repeat: repeat-x;
+    background-position: top;
 }
 
 .deploiement-interne {
