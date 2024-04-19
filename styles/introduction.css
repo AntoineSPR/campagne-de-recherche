@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --color-primary : cornsilk;
+    --color-secondary : wheat;
+    --color-tertiary : azure;
+}
+
+body {
+    background-image: url(../media/sky.jpg);
+    font-family: Cinzel, serif;
+}
+
+p, section {
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+}
+
+a{
+    color: inherit;
+}
+
+em {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+}
+
+header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 80px;
+    width: 100vw;
+    position: relative;
+    background-image: url(../media/board.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 130vw 200px;
+}
+
+nav {
+    padding: 20px;
+    position: absolute;
+}
+
+.vers-campagne {
+    position: absolute;
+    right: 2%;
+}
+
+nav a {
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+nav a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1 {
+    padding: 1%;
+    text-transform: uppercase;
+    font-family: Cinzel;
+    position: absolute;
+    right: 50%;
+    transform: translateX(50%);
+}
+
+img {
+    width: auto;
+    height: 2em;
+}
+
+/* Page d'intro */
+
+.texte-intro {
+    font-family : Philosopher, serif;
+    font-size : 1.2em;
+    padding: 20px;
+    text-align: justify;
+    line-height: 1.5;
+}
+
+.titre-intro {
+    text-align: center;
+}
+
+strong {
+    font-family: Cinza;
+}
+
+.legende {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 10px 30px;
+    grid-auto-flow: column;
+}
+
+footer {
+    font-family: Montserrat, sans-serif;
+    text-align: right;
+}
+
+.pitch {
+    text-align: center;
+    padding: 8% 20%;
+}
+
+.instructions {
+    text-align: justify;
+    padding: 3% 7%;
+}
+
+.intro h2 {
+    width: 97vw;
+    margin: auto;
+}
+
+h2 {
+    background-image: url(../media/scroll.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 500px 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+    grid-column: span 3;
+    text-align: center;
+} 

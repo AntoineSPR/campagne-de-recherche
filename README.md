@@ -3,11 +3,9 @@
 
 Ce programme permet au joueur de suivre son avancement en comparant la recherche d'un emploi à une campagne militaire d'un autre temps.
 
-[En cours de refonte graphique avec Figma / back-end à venir]
+[En cours de refonte graphique avec Figma sur la branche "horizontal-makeover" // back-end à venir]
 
-Aperçu de la version actuelle du site : https://antoinespr.github.io/campagne-de-recherche/
-
-Aperçu du nouveau design (en cours d'amélioration) : https://design.penpot.app/#/view/61b3a512-985c-80ca-8004-352f78393c74?page-id=61b3a512-985c-80ca-8004-352f78393c75&section=interactions&index=0&share-id=b4ce4fde-fc7c-81a2-8004-356585eef5cc
+Aperçu de la première version du site : https://antoinespr.github.io/campagne-de-recherche/
 
 ---------------------------
 
@@ -38,4 +36,17 @@ Une icône apparaît en bas à droite une fois tous les objectifs remplis. Certa
 License pour les icônes : 
 <a href="https://www.flaticon.com/free-icons/medieval" title="medieval icons">Medieval icons created by Leremy - Flaticon</a>
 
-<a href="https://www.flaticon.com/free-icons/scroll" title="scroll icons">Scroll icon created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/chinese" title="chinese icons">Chinese icons created by Konkapp - Flaticon</a>
+
+<a href="https://www.freepik.com/free-photo/sunshine-clouds-sky-during-morning-background-blue-white-pastel-heaven-soft-focus-lens-flare-sunlight-abstract-blurred-cyan-gradient-peaceful-nature-open-view-out-windows-beautiful-summer-spring_1284995.htm#query=sky%20background&position=0&from_view=keyword&track=ais&uuid=a6da236f-fdfe-4b67-9a33-12bb87bb7189">Image by tirachard</a> on Freepik
+
+<a href="https://www.freepik.com/free-photo/top-view-textile_12063129.htm#fromView=search&page=1&position=23&uuid=6f8a89d5-ace3-4ec1-98b8-da282c2869c6">Image by freepik</a>
+
+<a href="https://www.flaticon.com/free-icons/pine-tree" title="pine tree icons">Pine tree icons created by Umeicon - Flaticon</a>
+
+<a href="https://www.freepik.com/free-photo/brown-wooden-flooring_4246371.htm#fromView=search&page=1&position=5&uuid=836aa3db-c480-4161-b861-397771ff1c34">Image by rawpixel.com on Freepik</a>
+
+<a href="https://www.flaticon.com/free-icons/wood" title="wood icons">Wood icons created by Flat Icons - Flaticon</a>
+
+<a href="https://www.freepik.com/free-vector/cartoon-set-wooden-signboards_7416537.htm#query=wooden%20board&position=3&from_view=keyword&track=ais&uuid=64444b34-9a16-4bfe-92fc-41ea69e150c0">Image by pch.vector</a> on Freepik
+

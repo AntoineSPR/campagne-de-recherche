@@ -1,53 +1,3 @@
-const deploiementReco = document.querySelector(".deploiement-reco");
-const deploiementComm = document.querySelector(".deploiement-comm");
-const deploiementPrep = document.querySelector(".deploiement-prep");
-const deploiementInterne = document.querySelectorAll(".deploiement-interne");
-const objectifReco = document.querySelector(".objectif-reco");
-const objectifComm = document.querySelector(".objectif-comm");
-const affichageRapport = document.querySelector(".affichage-rapport");
-
-const offre = document.getElementById("offre");
-const entreprise = document.getElementById("entreprise");
-const infos = document.getElementById("infos");
-const mail = document.getElementById("mail");
-const appel = document.getElementById("appel");
-const entretien = document.getElementById("entretien");
-const reseau = document.getElementById("reseau");
-const entrainement = document.getElementById("entrainement");
-const projet = document.getElementById("projet");
-
-const offreDeploye = document.querySelector(".offre");
-const entrepriseDeploye = document.querySelector(".entreprise");
-const infosDeploye = document.querySelector(".infos");
-const mailDeploye = document.querySelector(".mail");
-const appelDeploye = document.querySelector(".appel");
-
-const nombreOffres = document.getElementById("nombreOffres");
-const nombreEntreprises = document.getElementById("nombreEntreprises");
-const nombreMessages = document.getElementById("nombreMessages");
-const nombreAppels = document.getElementById("nombreAppels");
-
-const scoreOffres = document.querySelector(".score-offre");
-const scoreEntreprises = document.querySelector(".score-entreprise");
-const scoreInfos = document.querySelector(".score-infos");
-const scoreMessages = document.querySelector(".score-mail");
-const scoreAppels = document.querySelector(".score-appel");
-
-const score = document.querySelectorAll(".score");
-const obj = document.querySelectorAll(".obj");
-
-let nombreTroupes = {
-    "offre": 0,
-    "entreprise": 0,
-    "infos": 0,
-    "mail" : 0,
-    "appel" : 0,
-    "entretien" : 0,
-    "reseau" : 0, 
-    "entrainement" : 0,
-    "projet" : 0,
-};
-
 //////////////////////////////////////////////////////
 // Fonction pour deployer les éléments sélectionnés :
 //////////////////////////////////////////////////////
@@ -56,7 +6,7 @@ function deployerTroupes(troupe, zone) {
     troupe.addEventListener("click", () => {
         let compte=nombreTroupes[troupe.id];
     
-    if (compte >= 15) {
+    if (compte >= 16) {
         console.log(`Nombre maximum d'unités ${troupe.id} déployées`);
         return;
     }
@@ -94,7 +44,7 @@ function majScore(unite) {
 
 //////////////////////////////////////////////////////
 // Fonction pour changer la couleur du score lorsque l'objectif est atteint, puis
-// Afficher l'icône de rapport lorsque tous les scores sont au vert :
+// Afficher l'icône de victoire lorsque tous les scores sont au vert :
 //////////////////////////////////////////////////////
 
 function verifObjectif() {
@@ -113,7 +63,9 @@ function verifObjectif() {
     });
     
     if (toutVert) {
-        affichageRapport.innerHTML = `<img src='images/victoire.png' alt='objectif atteint'>`;
+        victoryImage.style = `opacity: 1`;
+        victoryText.innerText = `Objectif atteint !`;
+        victory.style.backgroundColor = `rgba(245, 222, 179, .8)`; 
     }
 }
 
@@ -174,7 +126,7 @@ deploiementInterne.forEach(zone => {
 
 //////////////////////////////////////////////////////
 // Fonction pour mettre à jour la couleur si le score est inférieur à l'objectif, puis : 
-// Faire disparaître l'icône de rapport si les objectifs ne sont plus atteints :
+// Réinitialise l'icône de victoire si les objectifs ne sont plus atteints :
 //////////////////////////////////////////////////////
 
 function objectifNonAtteint(){
@@ -192,35 +144,8 @@ function objectifNonAtteint(){
     });
     
     if (toutVert == false) {
-        affichageRapport.innerHTML = ``;
+        victoryImage.style = `opacity : 0.5`;
+        victoryText.innerText = `Objectif en vue`;
+        victory.style.background = `none`;
     }
 }
-
-//////////////////////////////////////////////////////
-// Calcul de la hauteur maximale des zones de déploiement en fonction du viewport et limitation pour conserver les proportions de la grille :
-//////////////////////////////////////////////////////
-
-const hauteurDeploiement = deploiementReco.getBoundingClientRect().height;
-const deploiementInterneElements = document.querySelectorAll('.deploiement-interne');
-
-deploiementInterneElements.forEach(element => {
-    element.style.maxHeight = `${hauteurDeploiement}px`;
-});
-
-//////////////////////////////////////////////////////
-// Comportement visuel des boutons :
-//////////////////////////////////////////////////////
-
-const boutons = document.querySelectorAll("button");
-
-boutons.forEach(bouton => {
-    bouton.addEventListener("click", () => {
-        bouton.style.transition = "transform 70ms linear";
-        bouton.style.transform = "translate(2px, 2px)";
-        bouton.style.boxShadow = "none";
-        setTimeout(() => {
-            bouton.style.transform = "none";
-            bouton.style.boxShadow = "";
-        }, 70);
-    })
-})
