@@ -164,6 +164,8 @@ button:hover~label {
     background-position: center;
     background-repeat: no-repeat;
     background-size: fill;
+    display: grid;
+    grid-template-rows: 100px 1fr 1fr 1fr;
 }
 
 .deployment h2 {
@@ -183,10 +185,9 @@ button:hover~label {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     background-image: url(../media/fence.png);
-    background-position: top;
+    background-position: bottom;
     background-size: 100px 50px;
     background-repeat: repeat-x;
-    margin-top: 40px;
 }
 
 .deploiement-interne {
