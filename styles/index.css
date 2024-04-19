@@ -200,6 +200,22 @@ button:hover~label {
     grid-template-rows: repeat(4, 1fr);
 }
 
+.deploiement-interne div {
+    position: relative;
+}
+
+.deploiement-interne div::after {
+    content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-80%);
+  width: 25px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0,0.5);
+}
+
 /*Colonne objectifs */
 
 .objectives {
