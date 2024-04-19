@@ -6,7 +6,7 @@ function deployerTroupes(troupe, zone) {
     troupe.addEventListener("click", () => {
         let compte=nombreTroupes[troupe.id];
     
-    if (compte >= 15) {
+    if (compte >= 16) {
         console.log(`Nombre maximum d'unités ${troupe.id} déployées`);
         return;
     }
@@ -156,21 +156,3 @@ const deploiementInterneElements = document.querySelectorAll('.deploiement-inter
 deploiementInterneElements.forEach(element => {
     element.style.maxHeight = `${hauteurDeploiement}px`;
 });
-
-//////////////////////////////////////////////////////
-// Comportement visuel des boutons :
-//////////////////////////////////////////////////////
-
-const boutons = document.querySelectorAll("button");
-
-boutons.forEach(bouton => {
-    bouton.addEventListener("click", () => {
-        bouton.style.transition = "transform 70ms linear";
-        bouton.style.transform = "translate(2px, 2px)";
-        bouton.style.boxShadow = "none";
-        setTimeout(() => {
-            bouton.style.transform = "none";
-            bouton.style.boxShadow = "";
-        }, 70);
-    })
-})

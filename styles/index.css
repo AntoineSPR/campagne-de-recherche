@@ -106,16 +106,25 @@ nav a:visited {
 }
 
 button {
-    border-radius: 5px;
+    border: none;
+    border-radius: 3px 3px 0px 0px;
     box-shadow: rgba(0, 0, 0, 0.35) 1.95px 1.95px 2.6px;
-    background-image: url(../media/board.svg);
+    background-image: url(../media/button.png);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: fill;
+    background-size: cover;
+    width: 76px;
+    height: 80px;
+    transition: .2s ease;
+    cursor: pointer;
 }
 
 button:hover {
-    opacity: 80%;
+    transform: scale(1.1);
+}
+
+button:active {
+    transform: scale(1);
 }
 
 button img {
@@ -151,15 +160,18 @@ button:hover~label {
 
 .deploiement-interne {
     overflow-y: hidden;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
 }
 
 /*Colonne objectifs */
 
 .objectives {
-    background-image: url(../media/board.svg);
+    background-image: url(../media/board2.png);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: fill;
+    background-size: cover;
 }
 
 .grid-objectif {
