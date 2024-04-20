@@ -20,6 +20,31 @@ a {
     color: inherit;
 }
 
+a:link {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
+nav {
+    padding: 20px;
+    position: absolute;
+}
+
+nav a {
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+.vers-campagne {
+    position: absolute;
+    right: 2%;
+}
+
 nav a {
     border: 3px solid rgba(245, 222, 179, .8);
     border-radius: 10px;
@@ -44,26 +69,6 @@ header {
     background-repeat: no-repeat;
     background-size: 130vw 200px;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-nav {
-    padding: 20px;
-    position: absolute;
-}
-
-nav a {
-    text-decoration: none;
-    font-size: 1.1em;
-}
-
-nav a:visited {
-    text-decoration: none;
-    color: inherit;
-}
-
-.vers-campagne {
-    position: absolute;
-    right: 2%;
 }
 
 h1 {
