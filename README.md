@@ -1,11 +1,9 @@
 # campagne-de-recherche
-(En cours) Projet de programme en JS : suivi d'une campagne de recherche sous forme de jeu.
+(En cours) Programme de suivi de recherche d'emploi sous forme de jeu (JavaScript + HTML/CSS).
 
-Ce programme permet au joueur de suivre son avancement en comparant la recherche d'un emploi à une campagne militaire d'un autre temps.
+[Back-end et version tablette/mobile à venir]
 
-[Back-end à venir]
-
-Aperçu du site : https://antoinespr.github.io/campagne-de-recherche/
+Aperçu du site (attention, les images mettent du temps à charger sur GitHub pages) : https://antoinespr.github.io/campagne-de-recherche/
 
 ---------------------------
 
