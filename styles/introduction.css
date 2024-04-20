@@ -10,6 +10,8 @@
 body {
     background-image: url(../media/sky.jpg);
     font-family: Cinzel, serif;
+    background-repeat: none;
+    background-size: cover;
 }
 
 p, section {
@@ -90,7 +92,6 @@ img {
     font-family : Philosopher, serif;
     font-size : 1.2em;
     padding: 20px;
-    text-align: justify;
     line-height: 1.5;
 }
 
@@ -106,7 +107,7 @@ strong {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-    gap: 10px 30px;
+    gap: 10px 70px;
     grid-auto-flow: column;
 }
 
@@ -116,12 +117,10 @@ footer {
 }
 
 .pitch {
-    text-align: center;
     padding: 8% 20%;
 }
 
 .instructions {
-    text-align: justify;
     padding: 3% 7%;
 }
 
