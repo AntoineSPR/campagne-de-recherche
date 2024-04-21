@@ -31,7 +31,8 @@ Une icône apparaît en bas à droite une fois tous les objectifs remplis. Certa
 
 ---------------------------
 
-License pour les icônes : 
+Licenses des icônes : 
+
 <a href="https://www.flaticon.com/free-icons/medieval" title="medieval icons">Medieval icons created by Leremy - Flaticon</a>
 
 <a href="https://www.flaticon.com/free-icons/chinese" title="chinese icons">Chinese icons created by Konkapp - Flaticon</a>
@@ -47,4 +48,6 @@ License pour les icônes :
 <a href="https://www.flaticon.com/free-icons/wood" title="wood icons">Wood icons created by Flat Icons - Flaticon</a>
 
 <a href="https://www.freepik.com/free-vector/cartoon-set-wooden-signboards_7416537.htm#query=wooden%20board&position=3&from_view=keyword&track=ais&uuid=64444b34-9a16-4bfe-92fc-41ea69e150c0">Image by pch.vector</a> on Freepik
+
+<a href="https://www.flaticon.com/free-icons/dropdown-arrow" title="dropdown arrow icons">Dropdown arrow icons created by Taufik - Flaticon</a>
 
