@@ -276,6 +276,7 @@ input[type='number'] {
     max-width: 17px;
     height: 30px;
     font-size: 2em;
+    background-color: wheat;
 }
 
 input[type="number"]::-webkit-inner-spin-button,
