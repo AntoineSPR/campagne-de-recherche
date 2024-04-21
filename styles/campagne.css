@@ -189,6 +189,13 @@ button:hover~label {
     grid-template-rows: 100px 1fr 100px 1fr 100px 1fr;
 }
 
+.deployment > div:nth-child(1) {
+    background-image: url(../media/pine-tree.png), url(../media/sky.jpg);
+    background-position: bottom, center;
+    background-repeat: repeat-x, no-repeat;
+    background-size: contain, cover;
+}
+
 .grid-deploiement {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
