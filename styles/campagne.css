@@ -190,10 +190,10 @@ button:hover~label {
 }
 
 .deployment > div:nth-child(1) {
-    background-image: url(../media/pine-tree.png), url(../media/pine-tree.png), url(../media/sky.jpg);
-    background-position: bottom, 10px 25px, center;
-    background-repeat: repeat-x, repeat-x, no-repeat;
-    background-size: contain, contain, cover;
+    background-image: url(../media/pine-tree.png), url(../media/pine-tree.png), url(../media/pine-tree.png), url(../media/sky.jpg);
+    background-position: bottom, 10px 25px, -10px 15px, center;
+    background-repeat: repeat-x, repeat-x, repeat-x, no-repeat;
+    background-size: contain, contain, contain, cover;
 }
 
 .grid-deploiement {
